@@ -41,7 +41,6 @@ public class Ticket {
 	@Column(name = "urgency")
 	private Integer urgency;
 
-	@NotNull
 	@Column(name = "solution")
 	private String solution;
 
@@ -111,6 +110,10 @@ public class Ticket {
 
 	public void setSolution(String solution) {
 		this.solution = solution;
+	}
+
+	public Ticket() {
+		super();
 	}
 
 }
