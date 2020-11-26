@@ -34,9 +34,10 @@ public class TicketService {
 		oldTicket.setTitle(ticket.getTitle());
 		oldTicket.setAuthor(ticket.getAuthor());
 		oldTicket.setDescription(ticket.getDescription());
-		oldTicket.setDate(ticket.getTimeCreated());
+		oldTicket.setTimeCreated(ticket.getTimeCreated());
 		oldTicket.setUrgency(ticket.getUrgency());
 		oldTicket.setSolution(ticket.getSolution());
+		oldTicket.setStatus(ticket.isStatus());
 		return this.repo.save(oldTicket);
 	}
 

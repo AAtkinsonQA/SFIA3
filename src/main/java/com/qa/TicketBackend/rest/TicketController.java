@@ -30,7 +30,7 @@ public class TicketController {
 		this.service = service;
 	}
 
-	@GetMapping("/ticket/readTicket")
+	@GetMapping("/ticket/readTickets")
 	public ResponseEntity<List<Ticket>> getTicket() {
 		return ResponseEntity.ok(this.service.getTicket());
 	}
