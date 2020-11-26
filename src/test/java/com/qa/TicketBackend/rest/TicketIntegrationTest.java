@@ -1,30 +1,25 @@
 package com.qa.TicketBackend.rest;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.request;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
@@ -39,7 +34,7 @@ import com.qa.TicketBackend.persistence.domain.Ticket;
 //		"classpath:exercise-data.sql" }, executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
 @ActiveProfiles(profiles = "test")
 public class TicketIntegrationTest {
-	
+
 	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
 	@Autowired
@@ -50,16 +45,14 @@ public class TicketIntegrationTest {
 
 	@Test
 	void testCreate() throws Exception {
-		Ticket newTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent",
-				"solution1", true);
+		Ticket newTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true);
 		String requestBody = this.mapper.writeValueAsString(newTicket);
-		RequestBuilder req = post("/create").contentType(MediaType.APPLICATION_JSON).content(requestBody);
+		RequestBuilder req = post("/ticket/createTicket").contentType(MediaType.APPLICATION_JSON).content(requestBody);
 
 		ResultMatcher checkStatus = status().isCreated();
 
-		Ticket savedTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent",
-				"solution1", true);
-		
+		Ticket savedTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true);
+
 		String resultBody = this.mapper.writeValueAsString(savedTicket);
 		ResultMatcher checkBody = content().json(resultBody);
 
@@ -75,26 +68,42 @@ public class TicketIntegrationTest {
 
 	@Test
 	void testUpdate() throws Exception {
-		Ticket newTicket = new Ticket(2L, "nested exception", "Bertie", "springboot nested exception error", timestamp, "not urgent",
-				"solution2", false);
+		/*
+		 * Ticket newTicket = new Ticket(2L, "nested exception", "Bertie",
+		 * "springboot nested exception error", timestamp, "not urgent", "solution2",
+		 * false); String requestBody = this.mapper.writeValueAsString(newTicket);
+		 * RequestBuilder request =
+		 * put("/updateTicket/1").contentType(MediaType.APPLICATION_JSON).content(
+		 * requestBody);
+		 * 
+		 * ResultMatcher checkStatus = status().isAccepted();
+		 * 
+		 * Ticket savedTicket = new Ticket(2L, "nested exception", "Bertie",
+		 * "springboot nested exception error", timestamp, "not urgent", "solution2",
+		 * false);
+		 * 
+		 * String resultBody = this.mapper.writeValueAsString(savedTicket);
+		 * ResultMatcher checkBody = content().json(resultBody);
+		 * 
+		 * 
+		 * this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
+		 */
+
+		Ticket newTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true);
 		String requestBody = this.mapper.writeValueAsString(newTicket);
-		RequestBuilder request = put("/update?id=1").contentType(MediaType.APPLICATION_JSON).content(requestBody);
+		RequestBuilder req = post("/ticket/createTicket").contentType(MediaType.APPLICATION_JSON).content(requestBody);
+		this.mockMVC.perform(req);
 
+		Ticket ticket1 = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true);
+		String body = this.mapper.writeValueAsString(ticket1);
 		ResultMatcher checkStatus = status().isAccepted();
-
-		Ticket savedTicket = new Ticket(2L, "nested exception", "Bertie", "springboot nested exception error", timestamp, "not urgent",
-				"solution2", false);
-		savedTicket.setId(1L);
-
-		String resultBody = this.mapper.writeValueAsString(savedTicket);
-		ResultMatcher checkBody = content().json(resultBody);
-
-		this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
+		RequestBuilder req1 = put("/ticket/updateTicket/2").contentType(MediaType.APPLICATION_JSON).content(body);
+		MvcResult result = this.mockMVC.perform(req1).andExpect(checkStatus).andReturn();
 	}
 
 	@Test
 	void testDelete() throws Exception {
-		RequestBuilder request = delete("/remove/1");
+		RequestBuilder request = delete("/ticket/deleteTicket/1");
 
 		ResultMatcher checkStatus = status().is(200);
 
@@ -109,14 +118,29 @@ public class TicketIntegrationTest {
 
 	@Test
 	void testRead() throws Exception {
-		Ticket ticket = new Ticket(2L, "nested exception", "Bertie", "springboot nested exception error", timestamp, "not urgent",
-				"solution2", false);
-		ticket.setId(1L);
+		/*
+		 * Ticket ticket = new Ticket(2L, "nested exception", "Bertie",
+		 * "springboot nested exception error", timestamp, "not urgent", "solution2",
+		 * false); ticket.setId(1L); String requestBody =
+		 * this.mapper.writeValueAsString(ticket); RequestBuilder req =
+		 * post("/ticket/createTicket").contentType(MediaType.APPLICATION_JSON).content(
+		 * requestBody); MvcResult result = this.mockMVC.perform(req).andReturn();
+		 * String reqBody = result.getResponse().getContentAsString(); List<MvcResult>
+		 * tickets = new ArrayList<>(); tickets.add(result); String responseBody =
+		 * this.mapper.writeValueAsString(tickets);
+		 * 
+		 * this.mockMVC.perform(get("/ticket/readTickets")).andExpect(status().isOk())
+		 * .andExpect(content().json(responseBody));
+		 */
+		Ticket ticket = new Ticket(1L, "nested exception", "Bertie", "springboot nested exception error", timestamp,
+				"not urgent", "solution2", false);
 		List<Ticket> tickets = new ArrayList<>();
-		tickets.add(ticket);
-		String responseBody = this.mapper.writeValueAsString(tickets);
+		String content = this.mockMVC
+				.perform(request(HttpMethod.GET, "/ticket/readTickets").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk()).andReturn().getResponse().getContentAsString();
 
-		this.mockMVC.perform(get("/get")).andExpect(status().isOk()).andExpect(content().json(responseBody));
+		assertEquals(this.mapper.writeValueAsString(tickets), content);
+
 	}
 
 }

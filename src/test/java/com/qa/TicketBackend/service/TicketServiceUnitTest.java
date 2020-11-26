@@ -3,7 +3,6 @@ package com.qa.TicketBackend.service;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.sql.Timestamp;
-import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +20,7 @@ import com.qa.TicketBackend.persistence.repo.TicketRepo;
 @SpringBootTest
 @ActiveProfiles(profiles = "test")
 public class TicketServiceUnitTest {
-	
+
 	Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
 	@Autowired
@@ -34,10 +33,8 @@ public class TicketServiceUnitTest {
 	void testCreate() {
 
 		Long id = 1L;
-		Ticket newTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent",
-				"solution1", false);
-		Ticket savedTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent",
-				"solution1", false);
+		Ticket newTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", false);
+		Ticket savedTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", false);
 		savedTicket.setId(id);
 
 		Mockito.when(this.repo.save(newTicket)).thenReturn(savedTicket);
@@ -49,17 +46,15 @@ public class TicketServiceUnitTest {
 	void testUpdate() {
 
 		Long id = 1L;
-		Ticket newTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent",
-				"solution1", true);
-		Ticket oldTicket = new Ticket(2L, "nested exception", "Bertie", "springboot nested exception error", timestamp, "not urgent",
-				"solution2", false);
+		Ticket newTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true);
+		Ticket oldTicket = new Ticket(2L, "nested exception", "Bertie", "springboot nested exception error", timestamp,
+				"not urgent", "solution2", false);
 		oldTicket.setId(id);
-		Ticket updatedTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent",
-				"solution1", true);
+		Ticket updatedTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true);
 		updatedTicket.setId(id);
 
 		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(oldTicket));
-		Mockito.when(this.repo.save(updatedTicket)).thenReturn(updatedTicket);
+		Mockito.when(this.repo.save(oldTicket)).thenReturn(updatedTicket);
 
 		assertThat(this.service.updateTicket(newTicket, id)).isEqualTo(updatedTicket);
 
@@ -70,8 +65,7 @@ public class TicketServiceUnitTest {
 
 		List<Ticket> tickets = new ArrayList<>();
 		Long id = 1L;
-		Ticket newTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent",
-				"solution1", true);
+		Ticket newTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true);
 		newTicket.setId(id);
 		tickets.add(newTicket);
 
@@ -84,8 +78,7 @@ public class TicketServiceUnitTest {
 	void testDelete() {
 
 		Long id = 1L;
-		Ticket ticketToRemove = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent",
-				"solution1", true);
+		Ticket ticketToRemove = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true);
 		ticketToRemove.setId(id);
 
 		Mockito.when(this.repo.existsById(id)).thenReturn(false);
