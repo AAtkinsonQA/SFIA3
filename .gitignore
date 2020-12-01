@@ -1,17 +1,17 @@
 HELP.md
-target/
+SFIA3backend/target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
 ### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+SFIA3backend/.apt_generated
+SFIA3backend/.classpath
+SFIA3backend/.factorypath
+SFIA3backend/.project
+SFIA3backend/.settings
+SFIA3backend/.springBeans
+SFIA3backend/.sts4-cache
 
 ### IntelliJ IDEA ###
 .idea
