@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+#title .container-fluid{
+  padding: 3% 15% 7%;
+}
+
+.big-heading{
+  padding-top: 2%;
+  font-size: 3.5rem;
+  line-height: 1.5;
+  font-weight: 500;
+  text-align: center;
+}
+
+.title-section{
+  background-color: #142850;
+    color:#fff;
+  }
