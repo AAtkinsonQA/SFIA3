@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import SiteTemplate from './pages/siteTemplate';
+import App from '../App';
+import { Switch, Route, BrowserRouter as Router, Link} from 'react-router-dom';
 
 const SelectOptions = () => {
 
@@ -8,7 +10,9 @@ const SelectOptions = () => {
         <section id="features" class="white-section">
         <div class="row">
           <div class="col-lg-4">
+          <Link to="/siteTemplate">
           <FontAwesomeIcon icon="file-alt" size="6x" color="#004050"/>
+          </Link>
             <h3 class="buttontag">Create a Ticket</h3>
           </div>
           <div class="col-lg-4">

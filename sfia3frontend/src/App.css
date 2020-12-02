@@ -68,3 +68,11 @@
   font-family:'Raleway',Montserrat,sans-serif;
   color: #004050;
   }
+
+.shaded{
+  background-color: #f2f2f2;
+}
+
+.searchbar{
+  padding-top: 5em;
+}

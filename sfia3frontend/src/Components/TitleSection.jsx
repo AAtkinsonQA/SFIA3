@@ -17,8 +17,8 @@ return(
           {/* <button type="button" onclick="location.href='html/Signup.html'0"
             class="btn btn-lg btn-light explore-button">Explore</button> */}
             <div class="col text-center">
-        <Form>
-        <FormControl type="text" placeholder="Search for an issue.." className="mr-sm-2" />
+        <Form className="searchbar">
+        <FormControl type="text" placeholder="Search for an issue.." className="mr-sm-2"/>
         </Form>
         </div>
         </div>

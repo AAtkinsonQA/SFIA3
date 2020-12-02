@@ -10,6 +10,10 @@ import ReactDOM from 'react-dom'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faFolderOpen, faFileAlt , faAddressBook} from '@fortawesome/free-solid-svg-icons'
+import SiteTemplate from './Components/pages/siteTemplate.jsx';
+import { Switch, Route, BrowserRouter as Router, Link} from 'react-router-dom';
+import Hub from './Components/pages/Hub';
+
 
 library.add(fab, faFolderOpen, faFileAlt, faAddressBook)
 
@@ -19,9 +23,12 @@ function App() {
       <style>
       @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
       </style> 
-      <SiteNavbar/>
-      <TitleSection/>
-      <SelectOptions/>
+      <Router>
+      <Switch>
+          <Route path="/siteTemplate" component={SiteTemplate} exact/>
+          <Route path="/" component={Hub} exact/>
+      </Switch>
+      </Router>
     </div>
   );
 }
