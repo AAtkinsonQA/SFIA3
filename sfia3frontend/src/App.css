@@ -43,13 +43,36 @@
 
 .big-heading{
   padding-top: 2%;
+  padding-top: 5%;
   font-size: 3.5rem;
   line-height: 1.5;
   font-weight: 500;
   text-align: center;
+  font-family: 'Raleway',Montserrat,sans-serif;
+  text-transform: uppercase;
 }
 
 .title-section{
-  background-color: #142850;
+  background-color: #004050;
     color:#fff;
   }
+
+
+  #features{
+    padding: 5rem 2rem 5rem 2rem;
+    text-align: center;
+  }
+  
+.buttontag{
+  padding-top: 1rem;
+  font-family:'Raleway',Montserrat,sans-serif;
+  color: #004050;
+  }
+
+.shaded{
+  background-color: #f2f2f2;
+}
+
+.searchbar{
+  padding-top: 5em;
+}
