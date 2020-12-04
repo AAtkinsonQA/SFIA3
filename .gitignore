@@ -39,6 +39,7 @@ build/
 sfia3frontend/node_modules
 sfia3frontend/.pnp
 sfia3frontend/.pnp.js
+sfia3frontend/.eslintcache
 
 # testing
 sfia3frontend/coverage
