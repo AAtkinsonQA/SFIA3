@@ -11,10 +11,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faFolderOpen, faFileAlt, faAddressBook } from '@fortawesome/free-solid-svg-icons'
 import SiteTemplate from './Components/pages/siteTemplate.jsx';
+import CreateTicket from './Components/pages/createTicket'
 import ContactUs from './Components/pages/contactUs.jsx';
 import { Switch, Route, BrowserRouter as Router, Link} from 'react-router-dom';
 import Hub from './Components/pages/Hub';
-import CreateTicket from './Components/pages/createTicket'
 
 
 library.add(fab, faFolderOpen, faFileAlt, faAddressBook)
@@ -27,6 +27,7 @@ function App() {
       </style>
       <Router>
       <Switch>
+        <Route path="/createTicket" component={CreateTicket} exact/>
           <Route path="/contactUs" component={ContactUs} exact/>
           <Route path="/siteTemplate" component={SiteTemplate} exact/>
           <Route path="/" component={Hub} exact/>

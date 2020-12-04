@@ -10,7 +10,7 @@ const SelectOptions = () => {
         <section id="features" class="white-section">
         <div class="row">
           <div class="col-lg-4">
-          <Link to="/siteTemplate">
+          <Link to="/createTicket">
           <FontAwesomeIcon icon="file-alt" size="6x" color="#004050"/>
           </Link>
             <h3 class="buttontag">Create a Ticket</h3>
