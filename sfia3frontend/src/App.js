@@ -11,7 +11,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faFolderOpen, faFileAlt, faAddressBook } from '@fortawesome/free-solid-svg-icons'
 import SiteTemplate from './Components/pages/siteTemplate.jsx';
-import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
+import ContactUs from './Components/pages/contactUs.jsx';
+import { Switch, Route, BrowserRouter as Router, Link} from 'react-router-dom';
 import Hub from './Components/pages/Hub';
 import CreateTicket from './Components/pages/createTicket'
 
@@ -25,11 +26,11 @@ function App() {
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
       </style>
       <Router>
-        <Switch>
-          <Route path="/createTicket" component={CreateTicket} exact />
-          <Route path="/siteTemplate" component={SiteTemplate} exact />
-          <Route path="/" component={Hub} exact />
-        </Switch>
+      <Switch>
+          <Route path="/contactUs" component={ContactUs} exact/>
+          <Route path="/siteTemplate" component={SiteTemplate} exact/>
+          <Route path="/" component={Hub} exact/>
+      </Switch>
       </Router>
     </div>
   );
