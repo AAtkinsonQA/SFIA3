@@ -21,12 +21,9 @@ const CreateTicket = () => {
     };
 
     return (
+        <>
+        <SiteNavbar />
         <Container fluid>
-            <Row>
-                <Col>
-                    <SiteNavbar />
-                </Col>
-            </Row>
             <Row>
                 <Col className="shaded" sm={4}>This is the side bar</Col>
                 <Col className="shaded" sm={8}>
@@ -113,6 +110,7 @@ const CreateTicket = () => {
                 </Col>
             </Row>
         </Container>
+        </>
     );
 
 

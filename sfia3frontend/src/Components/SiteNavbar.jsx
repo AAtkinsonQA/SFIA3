@@ -1,13 +1,15 @@
 import React from 'react';
 import qa_fill_primary from './qa_fill_primary.svg';
-import { Button, Navbar, Nav, Form, NavDropdown, FormControl } from 'react-bootstrap';
+import { Button, Navbar, Nav, Form, NavDropdown, Container, Col,Row } from 'react-bootstrap';
 
 
 const SiteNavbar = () => {
-return( <Navbar bg="light" expand="lg">
+return( 
+<>
+<Navbar expand="lg" >
 <Navbar.Brand href="#home">  
 <img
-        src="https://svgshare.com/i/Rwp.svg"
+        src="https://i.imgur.com/sd243yk.png"
         width="50"
         height="50"
         className="d-inline-block align-top"
@@ -44,6 +46,13 @@ return( <Navbar bg="light" expand="lg">
     <Button variant="outline-success">Search</Button>
   </Form> */}
 </Navbar.Collapse>
-</Navbar> );
+</Navbar>
+<Container fluid>
+  <Row>
+    <Col>_</Col>
+    </Row>
+    </Container>
+
+</>);
 }
 export default SiteNavbar;

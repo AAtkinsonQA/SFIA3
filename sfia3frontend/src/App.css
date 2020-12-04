@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #dadada !important;
 }
 
 @keyframes App-logo-spin {
@@ -39,6 +39,7 @@
 
 #title .container-fluid{
   padding: 3% 15% 7%;
+  background-color: #dadada;
 }
 
 .big-heading{
@@ -49,12 +50,13 @@
   font-weight: 500;
   text-align: center;
   font-family: 'Raleway',Montserrat,sans-serif;
+  color: #383737;
   text-transform: uppercase;
 }
 
-.title-section{
+#title{
   background-color: #004050;
-    color:#fff;
+    color: #004050;
   }
 
 
@@ -69,12 +71,32 @@
   color: #004050;
   }
 
+  .btn-primary {
+    color: #fff;
+    background-color:rgb(61, 172, 57) !important;
+    border-color: rgb(61, 172, 57) !important;
+  }
+
 .shaded{
-  background-color: #c6e5ff;
+  background-color: #dadada;
 }
 .shaded2{
-  background-color: whitesmoke;
+  background-color: rgb(145, 14, 14);
 }
 .searchbar{
   padding-top: 5em;
+}
+
+.container-fluid{
+  background-color: rgb(61, 172, 57);
+  color:rgb(61, 172, 57);
+}
+
+.navbar{
+  background-color: #004050;
+  font-family: 'Raleway';
+}
+
+.nav-link{
+  color: #dadada !important;
 }
