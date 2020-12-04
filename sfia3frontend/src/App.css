@@ -39,6 +39,7 @@
 
 #title .container-fluid{
   padding: 3% 15% 7%;
+  background-color: #dadada;
 }
 
 .big-heading{
@@ -52,7 +53,7 @@
   text-transform: uppercase;
 }
 
-.title-section{
+#title{
   background-color: #004050;
     color:#fff;
   }
@@ -77,4 +78,19 @@
 }
 .searchbar{
   padding-top: 5em;
+}
+
+
+.container-fluid{
+  background-color: green;
+}
+
+.navbar{
+  background-color: #004050;
+  
+  font-family: 'Raleway';
+}
+
+.nav-link{
+color:white;
 }

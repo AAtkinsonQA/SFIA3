@@ -4,10 +4,10 @@ import { Button, Navbar, Nav, Form, NavDropdown, FormControl } from 'react-boots
 
 
 const SiteNavbar = () => {
-return( <Navbar bg="light" expand="lg">
+return( <Navbar expand="lg" >
 <Navbar.Brand href="#home">  
 <img
-        src="https://svgshare.com/i/Rwp.svg"
+        src="https://i.imgur.com/sd243yk.png"
         width="50"
         height="50"
         className="d-inline-block align-top"
