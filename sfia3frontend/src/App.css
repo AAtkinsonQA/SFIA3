@@ -100,3 +100,9 @@
 .nav-link{
   color: #dadada !important;
 }
+
+.create{
+  color:black;
+  padding-top: 2em;
+  height: 100vh;
+}
