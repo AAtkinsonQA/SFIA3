@@ -20,7 +20,9 @@ const SelectOptions = () => {
             <h3 class="buttontag">View All Tickets</h3>
           </div>
           <div class="col-lg-4">
+          <Link to="/contactUs">
           <FontAwesomeIcon icon="address-book" size="6x" color="#004050"/>
+          </Link>
             <h3 class="buttontag">Contact Us</h3>
           </div>
         </div>
