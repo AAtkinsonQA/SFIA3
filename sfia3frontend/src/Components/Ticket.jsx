@@ -10,8 +10,11 @@ const Ticket = (props) => {
   const updateState=props.updateState;
   console.log(updateState);
 
-  const id = props.key;
-  console.log(props.key)
+  let id = props.id;
+  console.log(props.id);
+  console.log(id);
+
+
   return (
     <>
       <Card>
