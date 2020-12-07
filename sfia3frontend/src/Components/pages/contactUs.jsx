@@ -21,15 +21,12 @@ const ContactUs = () => {
     };
 
     return (
+        <>
+        <SiteNavbar />
         <Container fluid>
             <Row>
-                <Col>
-                    <SiteNavbar />
-                </Col>
-            </Row>
-            <Row>
-                <Col className="shaded" sm={4}>This is the side bar</Col>
-                <Col className="shaded" sm={8}>
+                <Col className="shaded create" sm={4}>This is the side bar</Col>
+                <Col className="shaded create" sm={8}>
                     <Form noValidate validated={validated} onSubmit={handleSubmit}>
                         
                         <Form.Row>
@@ -89,6 +86,7 @@ const ContactUs = () => {
                 </Col>
             </Row>
         </Container>
+        </>
     );
 
 

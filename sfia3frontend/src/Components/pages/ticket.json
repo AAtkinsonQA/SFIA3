@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "title":"Screen not working",
+        "author":"Bertie A",
+        "description":"Screen is all black",
+        "timeCreated":"2020-11-25T15:50:54.074+00:00",
+        "urgency":"high",
+        "solution":"",
+        "status":"false"
+    },
+    {
+        "id":2,
+        "title":"Spring Boot doesn't install",
+        "author":"Carlos A",
+        "description":"Screen is all black",
+        "timeCreated":"2020-11-25T15:50:54.074+00:00",
+        "urgency":"high",
+        "solution":"",
+        "status":"false"
+    }
+]
