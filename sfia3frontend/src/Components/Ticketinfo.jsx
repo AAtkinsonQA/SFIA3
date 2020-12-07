@@ -1,12 +1,30 @@
 import React from 'react';
-const Ticketinfo = ({obj}) => {
+import {Card, Button, Form} from "react-bootstrap";
+const Ticketinfo = (props) => {
 
+
+const obj = props.info
 
 return( 
     <>
-    <h1>{obj.id}</h1>
-    <h1>{obj.author}</h1>
-    <h1>{obj.title}</h1>
+    <Card>
+        <Card.Header as="h5">{obj.timeCreated}</Card.Header>
+        <Card.Body>
+          <Card.Title>{obj.title}</Card.Title>
+          <Card.Text>
+            {obj.author}
+            </Card.Text>
+            <Card.Text>
+            {obj.description}
+          </Card.Text>
+          <div>
+            <Form>
+            <input type="text" value={stateQuery} onChange={updateState, updateCheck} />
+            </Form>
+          <Button type= "submit" style = {{marginRight:"2em"}} value={obj.id} variant="primary" onClick={updateState}>More Information</Button>
+          </div>
+        </Card.Body>
+      </Card>
     </>
  );
 }

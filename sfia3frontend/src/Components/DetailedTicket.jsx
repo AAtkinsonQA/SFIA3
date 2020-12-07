@@ -41,7 +41,10 @@ const date = new Date(Date.now()) //temporary date
 
 return( 
     <>
-   <TicketInfo obj={data}/>
+   <TicketInfo 
+   stateQuery={props.stateQuery} 
+   updateState={props.updateState}
+   info={data}/>
     </>
  );
 

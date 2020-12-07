@@ -12,16 +12,19 @@ const ViewTickets = () => {
 
 //pass function to check whether more info is clicked
     const [query, setQuery] = useState(``);
-    const [check, setCheck] = useState(false);
+    const [solution, setSolution] = useState(``);
+    
+    const handleSolution = e => {
+        setQuery(e.currentTarget.value);
+        console.log(solution);
+    }
     
     const handleQuery = e => {
         console.log("query was " + {query});
         setQuery(e.currentTarget.value);
         console.log(query);
     }
-    const handleCheck = e => {
-        setCheck(!check);
-    }
+
 
     const [data,setData]= useState([]);
     const [error, setError] = useState(null);
@@ -59,7 +62,8 @@ return(
     <Row>
         <Col className="shaded create" sm={4}>This is the side bar
             <DetailedTicket 
-            stateQuery={query}
+            stateQuery={solution}
+            updateState={handleSolution}
 
             />
             </Col>

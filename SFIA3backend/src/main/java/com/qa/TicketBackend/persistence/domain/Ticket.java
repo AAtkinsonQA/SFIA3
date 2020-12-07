@@ -1,15 +1,12 @@
 package com.qa.TicketBackend.persistence.domain;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -31,11 +28,8 @@ public class Ticket {
 	@Column(name = "description")
 	private String description;
 
-	@NotNull
-	@Basic
-	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "timeCreated")
-	private Date timeCreated;
+	private LocalDateTime timeCreated = LocalDateTime.now();
 
 	@NotNull
 	@Column(name = "urgency")
@@ -48,7 +42,7 @@ public class Ticket {
 	private boolean status;
 
 	public Ticket(Long id, @NotNull String title, @NotNull String author, @NotNull String description,
-			@NotNull Date timeCreated, @NotNull String urgency, String solution, boolean status) {
+			LocalDateTime timeCreated, @NotNull String urgency, String solution, boolean status) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -96,11 +90,11 @@ public class Ticket {
 		this.description = description;
 	}
 
-	public Date getTimeCreated() {
+	public LocalDateTime getTimeCreated() {
 		return timeCreated;
 	}
 
-	public void setTimeCreated(Date timeCreated) {
+	public void setTimeCreated(LocalDateTime timeCreated) {
 		this.timeCreated = timeCreated;
 	}
 
