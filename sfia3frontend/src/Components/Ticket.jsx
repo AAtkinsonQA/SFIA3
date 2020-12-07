@@ -3,11 +3,15 @@ import {Card, Button} from "react-bootstrap";
 
 const Ticket = (props) => {
   const ticketinfo = props.info;
-  console.log(props.info);
 
-  const date = new Date(Date.now())
+  const date = new Date(Date.now()) //temporary date
   let stringDate = date.toString();
 
+  const updateState=props.updateState;
+  console.log(updateState);
+
+  const id = props.key;
+  console.log(props.key)
   return (
     <>
       <Card>
@@ -17,7 +21,10 @@ const Ticket = (props) => {
           <Card.Text>
             {props.author}
           </Card.Text>
-          <Button variant="primary">More Information</Button>
+          <div>
+          <Button style = {{marginRight:"2em"}} value={id} variant="primary" onClick={updateState}>More Information</Button>
+          <Button variant="danger">Delete</Button>
+          </div>
         </Card.Body>
       </Card>
     </>

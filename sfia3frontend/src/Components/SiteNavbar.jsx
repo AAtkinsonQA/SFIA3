@@ -1,5 +1,6 @@
 import React from 'react';
 import qa_fill_primary from './qa_fill_primary.svg';
+import {Link} from 'react-router-dom';
 import { Button, Navbar, Nav, Form, NavDropdown, Container, Col,Row } from 'react-bootstrap';
 
 
@@ -30,16 +31,22 @@ return(
 <Navbar.Toggle aria-controls="basic-navbar-nav" />
 <Navbar.Collapse id="basic-navbar-nav">
   <Nav className="mr-auto">
+    <Link to="/">
     <Nav.Link href="#home">Home</Nav.Link>
+    </Link>
+    <Link to="/viewTickets">
     <Nav.Link href="#link">Tickets</Nav.Link>
+    </Link>
+    <Link to="/createTicket">
     <Nav.Link href="#link">New Ticket</Nav.Link>
-    <NavDropdown title="Options" id="basic-nav-dropdown">
+    </Link>
+    {/* <NavDropdown title="Options" id="basic-nav-dropdown">
       <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
       <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
       <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
       <NavDropdown.Divider />
       <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-    </NavDropdown>
+    </NavDropdown> */}
   </Nav>
   {/* <Form inline>
     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
