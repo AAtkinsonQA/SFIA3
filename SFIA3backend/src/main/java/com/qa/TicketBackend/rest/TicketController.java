@@ -2,8 +2,6 @@ package com.qa.TicketBackend.rest;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.TicketBackend.persistence.domain.Ticket;
 import com.qa.TicketBackend.service.TicketService;
-
 
 @CrossOrigin
 @RestController
@@ -33,6 +30,11 @@ public class TicketController {
 	@GetMapping("/ticket/readTickets")
 	public ResponseEntity<List<Ticket>> getTicket() {
 		return ResponseEntity.ok(this.service.getTicket());
+	}
+
+	@GetMapping("/ticket/readTicket/{id}")
+	public ResponseEntity<Ticket> getSingleTicket(@PathVariable Long id) {
+		return ResponseEntity.ok(this.service.getSingleTicket(id));
 	}
 
 //	@GetMapping("/name/{name}")
@@ -59,4 +61,3 @@ public class TicketController {
 		return new ResponseEntity<Ticket>(this.service.updateTicket(ticket, id), HttpStatus.ACCEPTED);
 	}
 }
-
