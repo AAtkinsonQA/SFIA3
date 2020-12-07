@@ -29,6 +29,10 @@ public class TicketService {
 		return !this.repo.existsById(id);
 	}
 
+	public Ticket getSingleTicket(Long id) {
+		return this.repo.findById(id).get();
+	}
+
 	public Ticket updateTicket(Ticket ticket, long id) {
 		Ticket oldTicket = this.repo.findById(id).get();
 		oldTicket.setTitle(ticket.getTitle());
