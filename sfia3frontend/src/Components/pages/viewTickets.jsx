@@ -10,12 +10,12 @@ import axios from 'axios';
 
 const ViewTickets = () => {
 
-//pass function to check whether more info is clicked
+    //pass function to check whether more info is clicked
     const [query, setQuery] = useState(``);
     const [check, setCheck] = useState(false);
-    
+
     const handleQuery = e => {
-        console.log("query was " + {query});
+        console.log("query was " + { query });
         setQuery(e.currentTarget.value);
         console.log(query);
     }
@@ -23,7 +23,7 @@ const ViewTickets = () => {
         setCheck(!check);
     }
 
-    const [data,setData]= useState([]);
+    const [data, setData] = useState([]);
     const [error, setError] = useState(null);
     const [isLoaded, setLoaded] = useState(false);
 
@@ -31,10 +31,10 @@ const ViewTickets = () => {
         setTimeout(() => {
 
             axios.get("http://localhost:8080/ticket/readTickets"
-            ,
+                ,
                 {
                     headers: {
-                        'Access-Control-Allow-Origin' : '*'
+                        'Access-Control-Allow-Origin': '*'
                     }
                 }
             )
@@ -43,44 +43,44 @@ const ViewTickets = () => {
                     setLoaded(true);
                     console.log(response.data);
                     setData(response.data);
-                    console.log(typeof(data));
+                    console.log(typeof (data));
                 }, (error) => {
                     setLoaded(true);
                     setError(error);
                 })
-        },10000)
-    },[])
+        }, 0)
+    }, [])
 
 
-return(  
-<>
-<SiteNavbar/>
-<Container fluid>
-    <Row>
-        <Col className="shaded create" sm={4}>This is the side bar
-            <DetailedTicket 
-            stateQuery={query}
+    return (
+        <>
+            <SiteNavbar />
+            <Container fluid>
+                <Row>
+                    <Col className="shaded create" sm={4}>This is the side bar
+            <DetailedTicket
+                            stateQuery={query}
 
-            />
-            </Col>
-        <Col className="shaded create"  sm={8}>
-            {data.map((ticket)=>(
-            <Ticket 
-            key={ticket.id}
-            id={ticket.id} 
-            title={ticket.title} 
-            author={ticket.author}
-            description={ticket.description}
-            timeCreated={ticket.timeCreated}
-            info={ticket}
-            stateQuery={query} 
-            updateState={handleQuery} 
-            />
-            ))}
-        </Col>
-    </Row>
-</Container>
-</>
-);
+                        />
+                    </Col>
+                    <Col className="shaded create" sm={8}>
+                        {data.map((ticket) => (
+                            <Ticket
+                                key={ticket.id}
+                                id={ticket.id}
+                                title={ticket.title}
+                                author={ticket.author}
+                                description={ticket.description}
+                                timeCreated={ticket.timeCreated}
+                                info={ticket}
+                                stateQuery={query}
+                                updateState={handleQuery}
+                            />
+                        ))}
+                    </Col>
+                </Row>
+            </Container>
+        </>
+    );
 }
 export default ViewTickets;
