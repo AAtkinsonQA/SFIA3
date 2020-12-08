@@ -6,8 +6,6 @@ import { Col } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import SiteNavbar from '../SiteNavbar.jsx';
 
-
-
 const ContactUs = () => {
     const [validated, setValidated] = useState(false);
     const handleSubmit = (event) => {
