@@ -6,12 +6,15 @@ SFIA3backend/target/
 
 ### STS ###
 SFIA3backend/.apt_generated
+SFIA3backend/src/.classpath
 SFIA3backend/.classpath
 SFIA3backend/.factorypath
-SFIA3backend/.project
+SFIA3backend/src/.project
 SFIA3backend/.settings
 SFIA3backend/.springBeans
 SFIA3backend/.sts4-cache
+SFIA3backend/bin/
+SFIA3backend/src/bin/
 
 ### IntelliJ IDEA ###
 .idea
