@@ -19,7 +19,6 @@ const Ticket = (props) => {
   const handleSubmit = (event) => {
     axios.delete(PATH + '/deleteTicket/' + props.id).then(response => {
       console.log(response);
-      window.location.reload(false);
     });
   }
   return (
