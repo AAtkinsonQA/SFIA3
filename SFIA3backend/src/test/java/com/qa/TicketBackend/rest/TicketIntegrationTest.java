@@ -8,7 +8,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,13 +46,15 @@ public class TicketIntegrationTest {
 
 	@Test
 	void testCreate() throws Exception {
-		Ticket newTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true, "example@qa.com", "java");
+		Ticket newTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true,
+				"example@qa.com", "java");
 		String requestBody = this.mapper.writeValueAsString(newTicket);
 		RequestBuilder req = post("/ticket/createTicket").contentType(MediaType.APPLICATION_JSON).content(requestBody);
 
 		ResultMatcher checkStatus = status().isCreated();
 
-		Ticket savedTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true, "example@qa.com", "java");
+		Ticket savedTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true,
+				"example@qa.com", "java");
 
 		String resultBody = this.mapper.writeValueAsString(savedTicket);
 		ResultMatcher checkBody = content().json(resultBody);
@@ -91,12 +92,14 @@ public class TicketIntegrationTest {
 		 * this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
 		 */
 
-		Ticket newTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true, "example@qa.com", "java");
+		Ticket newTicket = new Ticket(2L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true,
+				"example@qa.com", "java");
 		String requestBody = this.mapper.writeValueAsString(newTicket);
 		RequestBuilder req = post("/ticket/createTicket").contentType(MediaType.APPLICATION_JSON).content(requestBody);
 		this.mockMVC.perform(req);
 
-		Ticket ticket1 = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true, "example@qa.com", "java");
+		Ticket ticket1 = new Ticket(2L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true,
+				"example@qa.com", "java");
 		String body = this.mapper.writeValueAsString(ticket1);
 		ResultMatcher checkStatus = status().isAccepted();
 		RequestBuilder req1 = put("/ticket/updateTicket/2").contentType(MediaType.APPLICATION_JSON).content(body);
@@ -134,7 +137,8 @@ public class TicketIntegrationTest {
 		 * this.mockMVC.perform(get("/ticket/readTickets")).andExpect(status().isOk())
 		 * .andExpect(content().json(responseBody));
 		 */
-		Ticket ticket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true, "example@qa.com", "java");
+		Ticket ticket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true,
+				"example@qa.com", "java");
 		List<Ticket> tickets = new ArrayList<>();
 		String content = this.mockMVC
 				.perform(request(HttpMethod.GET, "/ticket/readTickets").accept(MediaType.APPLICATION_JSON))
