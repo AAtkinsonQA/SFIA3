@@ -26,6 +26,7 @@ const CreateTicket = () => {
     const [description, setDescription] = useState('');
     const [urgency, setUrgency] = useState('');
     const [email, setEmail] = useState('');
+    const [topic, setTopic] = useState('');
     const handleSubmit = (event) => {
         const form = event.target;
         event.preventDefault();
@@ -33,7 +34,7 @@ const CreateTicket = () => {
 
             event.stopPropagation();
         }
-        console.log(title, firstName, lastName, description, urgency)
+        console.log(title, firstName, lastName, description, urgency, topic)
         const data = {
             title,
             "author": firstName + " " + lastName,
@@ -41,7 +42,8 @@ const CreateTicket = () => {
             urgency,
             "solution": "no solution",
             "status": false,
-            email
+            email,
+            topic
         }
         axios.post(PATH + '/createTicket', data).then(response => {
             setfirstName('');
@@ -113,7 +115,7 @@ const CreateTicket = () => {
                             </Form.Row>
 
                             <Form.Row>
-                                <Form.Group as={Col} md="6" controlId="validationCustom04">
+                                <Form.Group as={Col} md="4" controlId="validationCustom04">
                                     <Form.Label>Title</Form.Label>
                                     <Form.Control
                                         type="text"
@@ -126,7 +128,42 @@ const CreateTicket = () => {
                                         Please provide a valid title.
           </Form.Control.Feedback>
                                 </Form.Group>
-                                <Form.Group as={Col} md="6" controlId="validationCustom05">
+                                <Form.Group as={Col} md="4" controlId="validationCustom05">
+                                    <Form.Label>Topic</Form.Label>
+                                    <Form.Control
+                                        as="select"
+                                        required
+                                        name="topic"
+                                        value={topic}
+                                        onInput={e => setTopic(e.target.value)}>
+                                        <option value="Git">Git</option>
+                                        <option value="Markdown">Markdown</option>
+                                        <option value="Jira">Jira</option>
+                                        <option value="Java">Java</option>
+                                        <option value="Python">Python</option>
+                                        <option value="Maven">Maven</option>
+                                        <option value="HTML_and_CSS">HTML & CSS</option>
+                                        <option value="Springboot">SpringBoot</option>
+                                        <option value="Javascript">Javascript</option>
+                                        <option value="Bash">Bash</option>
+                                        <option value="Docker">Docker</option>
+                                        <option value="NGINX">NGINX</option>
+                                        <option value="Jenkins">Jenkins</option>
+                                        <option value="Ansible">Ansible</option>
+                                        <option value="Terraform">Terraform</option>
+                                        <option value="AWS">AWS</option>
+                                        <option value="GCP">GCP</option>
+                                        <option value="Prometheus">Prometheus</option>
+                                        <option value="Kubernetes">Kubernetes</option>
+                                        <option value="Agile">Agile</option>
+                                        <option value="Jest">Jest</option>
+                                        <option value="React">React</option>
+                                    </Form.Control>
+                                    <Form.Control.Feedback type="invalid">
+                                        Please provide a valid urgency level.
+          </Form.Control.Feedback>
+                                </Form.Group>
+                                <Form.Group as={Col} md="4" controlId="validationCustom05">
                                     <Form.Label>Urgency</Form.Label>
                                     <Form.Control
                                         as="select"
