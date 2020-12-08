@@ -4,8 +4,9 @@ import {Card, Button} from "react-bootstrap";
 const Ticket = (props) => {
   const ticketinfo = props.info;
 
-  const date = new Date(Date.now()) //temporary date
-  let stringDate = date.toString();
+   //temporary date
+  let stringDate = props.timeCreated;
+  let formattedDate = stringDate.replace("T"," ").slice(0,19);
 
   const updateState=props.updateState;
   console.log(updateState);
@@ -18,7 +19,7 @@ const Ticket = (props) => {
   return (
     <>
       <Card>
-        <Card.Header as="h5">{stringDate.slice(0,28)}</Card.Header>
+        <Card.Header as="h5">{formattedDate}</Card.Header>
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
           <Card.Text>

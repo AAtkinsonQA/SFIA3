@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.qa.TicketBackend.persistence.domain.Ticket;
 import com.qa.TicketBackend.persistence.repo.TicketRepo;
+import com.qa.TicketBackend.utils.MyBeanUtils;
 
 @Service
 public class TicketService {
@@ -35,13 +36,7 @@ public class TicketService {
 
 	public Ticket updateTicket(Ticket ticket, long id) {
 		Ticket oldTicket = this.repo.findById(id).get();
-		oldTicket.setTitle(ticket.getTitle());
-		oldTicket.setAuthor(ticket.getAuthor());
-		oldTicket.setDescription(ticket.getDescription());
-		oldTicket.setTimeCreated(ticket.getTimeCreated());
-		oldTicket.setUrgency(ticket.getUrgency());
-		oldTicket.setSolution(ticket.getSolution());
-		oldTicket.setStatus(ticket.isStatus());
+		MyBeanUtils.mergeNotNull(ticket, oldTicket);
 		return this.repo.save(oldTicket);
 	}
 

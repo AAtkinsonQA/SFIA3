@@ -24,7 +24,6 @@ const DetailedTicket = (props) => {
                 // .then(res => res)
                 .then(response => {
                     setLoaded(true);
-                    //console.log(response.data);
                     setData(response.data);
                 }, (error) => {
                     setLoaded(true);
@@ -42,8 +41,6 @@ const date = new Date(Date.now()) //temporary date
 return( 
     <>
    <TicketInfo 
-   stateQuery={props.stateQuery} 
-   updateState={props.updateState}
    info={data}/>
     </>
  );

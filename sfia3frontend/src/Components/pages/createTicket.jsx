@@ -12,6 +12,8 @@ const CreateTicket = () => {
     const [description, setDescription] = useState('');
     const [urgency, setUrgency] = useState('');
     const [email, setEmail] = useState('');
+    
+    
     const handleSubmit = (event) => {
         const form = event.target;
         event.preventDefault();
