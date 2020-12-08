@@ -91,12 +91,12 @@ public class TicketIntegrationTest {
 		 * this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkBody);
 		 */
 
-		Ticket newTicket = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true, "example@qa.com", "java");
+		Ticket newTicket = new Ticket(2L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true, "example@qa.com", "java");
 		String requestBody = this.mapper.writeValueAsString(newTicket);
 		RequestBuilder req = post("/ticket/createTicket").contentType(MediaType.APPLICATION_JSON).content(requestBody);
 		this.mockMVC.perform(req);
 
-		Ticket ticket1 = new Ticket(1L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true, "example@qa.com", "java");
+		Ticket ticket1 = new Ticket(2L, "Syntax", "Jon", "syntax", timestamp, "not urgent", "solution1", true, "example@qa.com", "java");
 		String body = this.mapper.writeValueAsString(ticket1);
 		ResultMatcher checkStatus = status().isAccepted();
 		RequestBuilder req1 = put("/ticket/updateTicket/2").contentType(MediaType.APPLICATION_JSON).content(body);
