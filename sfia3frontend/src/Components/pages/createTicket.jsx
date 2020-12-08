@@ -116,6 +116,7 @@ const CreateTicket = () => {
 
                             <Form.Row>
                                 <Form.Group as={Col} md="4" controlId="validationCustom04">
+
                                     <Form.Label>Title</Form.Label>
                                     <Form.Control
                                         type="text"
@@ -126,6 +127,7 @@ const CreateTicket = () => {
                                         onInput={e => setTitle(e.target.value)} />
                                     <Form.Control.Feedback type="invalid" >
                                         Please provide a valid title.
+
           </Form.Control.Feedback>
                                 </Form.Group>
                                 <Form.Group as={Col} md="4" controlId="validationCustom05">
@@ -204,6 +206,7 @@ const CreateTicket = () => {
                             </Form.Row>
                             <Button type="submit">Submit Issue</Button>
                         </Form>
+
 
                     </Col>
                 </Row>
