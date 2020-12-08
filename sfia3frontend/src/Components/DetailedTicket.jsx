@@ -41,7 +41,7 @@ const date = new Date(Date.now()) //temporary date
 
 return( 
     <>
-   <TicketInfo obj={data}/>
+   <TicketInfo info={data}/>
     </>
  );
 

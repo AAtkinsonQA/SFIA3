@@ -12,15 +12,11 @@ const ViewTickets = () => {
 
     //pass function to check whether more info is clicked
     const [query, setQuery] = useState(``);
-    const [check, setCheck] = useState(false);
 
     const handleQuery = e => {
         console.log("query was " + { query });
         setQuery(e.currentTarget.value);
         console.log(query);
-    }
-    const handleCheck = e => {
-        setCheck(!check);
     }
 
     const [data, setData] = useState([]);
@@ -57,7 +53,7 @@ const ViewTickets = () => {
             <SiteNavbar />
             <Container fluid>
                 <Row>
-                    <Col className="shaded create" sm={4}>This is the side bar
+                    <Col className="shaded create" sm={4}> View Tickets
             <DetailedTicket
                             stateQuery={query}
 
