@@ -50,7 +50,6 @@ const ViewTickets = () => {
 
     return (
         <>
-            <SiteNavbar />
             <Container fluid>
                 <Row>
                     <Col className="shaded create" sm={4}> View Tickets
