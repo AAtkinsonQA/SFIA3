@@ -45,7 +45,7 @@ const ViewTickets = () => {
                     setError(error);
                 })
         }, 0)
-    }, [])
+    })
 
 
     return (
