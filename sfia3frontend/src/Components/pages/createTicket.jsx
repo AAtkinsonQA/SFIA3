@@ -58,7 +58,6 @@ const CreateTicket = () => {
 
     return (
         <>
-            <SiteNavbar />
             <Container fluid>
                 <Row>
                     <Col className="shaded create" sm={4}>This is the side bar</Col>

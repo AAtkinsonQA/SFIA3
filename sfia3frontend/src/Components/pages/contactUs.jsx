@@ -22,70 +22,69 @@ const ContactUs = () => {
 
     return (
         <>
-        <SiteNavbar />
-        <Container fluid>
-            <Row>
-                <Col className="shaded create" sm={4}>This is the side bar</Col>
-                <Col className="shaded create" sm={8}>
-                    <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                        
-                        <Form.Row>
-                            <Form.Group as={Col} md="4" controlId="validationCustom01">
-                                <Form.Label>First name</Form.Label>
-                                <Form.Control
+            <Container fluid>
+                <Row>
+                    <Col className="shaded create" sm={4}>This is the side bar</Col>
+                    <Col className="shaded create" sm={8}>
+                        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+
+                            <Form.Row>
+                                <Form.Group as={Col} md="4" controlId="validationCustom01">
+                                    <Form.Label>First name</Form.Label>
+                                    <Form.Control
+                                        required
+                                        type="text"
+                                        placeholder="First name"
+                                    />
+                                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                </Form.Group>
+
+                                <Form.Group as={Col} md="4" controlId="validationCustom02">
+                                    <Form.Label>Last name</Form.Label>
+                                    <Form.Control
+                                        required
+                                        type="text"
+                                        placeholder="Last name"
+                                    />
+                                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                </Form.Group>
+                            </Form.Row>
+
+                            <Form.Row>
+                                <Form.Group as={Col} md="8" controlId="validationCustomUsername">
+                                    <Form.Label>Email address</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        placeholder="Email address"
+                                        aria-describedby="inputGroupPrepend"
+                                        required
+                                    />
+                                    <Form.Control.Feedback type="invalid">Please choose a valid email address.</Form.Control.Feedback>
+                                </Form.Group>
+                            </Form.Row>
+
+
+                            <Form.Row>
+                                <Form.Group as={Col} md="12" controlId="validationCustom03">
+                                    <Form.Label>Query</Form.Label>
+                                    <Form.Control as="textarea" placeholder="Please provide details of your query...." required />
+                                    <Form.Control.Feedback type="invalid">Please provide details of your query.</Form.Control.Feedback>
+                                </Form.Group>
+                            </Form.Row>
+
+                            <Form.Group>
+                                <Form.Check
                                     required
-                                    type="text"
-                                    placeholder="First name"
+                                    label="Agree to terms and conditions"
+                                    feedback="You must agree before submitting."
                                 />
-                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                             </Form.Group>
+                            <Button type="submit">Submit</Button>
+                        </Form>
 
-                            <Form.Group as={Col} md="4" controlId="validationCustom02">
-                                <Form.Label>Last name</Form.Label>
-                                <Form.Control
-                                    required
-                                    type="text"
-                                    placeholder="Last name"
-                                />
-                                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                            </Form.Group>
-                        </Form.Row>
-
-                        <Form.Row>
-                            <Form.Group as={Col} md="8" controlId="validationCustomUsername">
-                                <Form.Label>Email address</Form.Label>
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Email address"
-                                    aria-describedby="inputGroupPrepend"
-                                    required
-                                />
-                                <Form.Control.Feedback type="invalid">Please choose a valid email address.</Form.Control.Feedback>
-                            </Form.Group>
-                        </Form.Row>
-
-        
-                        <Form.Row>
-                            <Form.Group as={Col} md="12" controlId="validationCustom03">
-                                <Form.Label>Query</Form.Label>
-                                <Form.Control as="textarea" placeholder="Please provide details of your query...." required />
-                                <Form.Control.Feedback type="invalid">Please provide details of your query.</Form.Control.Feedback>
-                            </Form.Group>
-                        </Form.Row>
-
-                        <Form.Group>
-                            <Form.Check
-                                required
-                                label="Agree to terms and conditions"
-                                feedback="You must agree before submitting."
-                            />
-                        </Form.Group>
-                        <Button type="submit">Submit</Button>
-                    </Form>
-
-                </Col>
-            </Row>
-        </Container>
+                    </Col>
+                </Row>
+            </Container>
         </>
     );
 
