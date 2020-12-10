@@ -8,7 +8,8 @@ const SiteNavbar = () => {
 return( 
 <>
 <Navbar expand="lg" >
-<Navbar.Brand href="#home">  
+<Navbar.Brand href="#home">
+<Link to="/">
 <img
         src="https://i.imgur.com/sd243yk.png"
         width="50"
@@ -16,6 +17,7 @@ return(
         className="d-inline-block align-top"
         alt="QA logo"
       />
+</Link>  
 
 {/* <img
         src="/logo.svg"
@@ -31,14 +33,14 @@ return(
 <Navbar.Toggle aria-controls="basic-navbar-nav" />
 <Navbar.Collapse id="basic-navbar-nav">
   <Nav className="mr-auto">
-    <Link to="/">
-    <Nav.Link href="#home">Home</Nav.Link>
+    <Link to="/createTicket">
+    <Nav.Link href="#link">Create Tickets</Nav.Link>
     </Link>
     <Link to="/viewTickets">
-    <Nav.Link href="#link">Tickets</Nav.Link>
+    <Nav.Link href="#link">View Tickets</Nav.Link>
     </Link>
-    <Link to="/createTicket">
-    <Nav.Link href="#link">New Ticket</Nav.Link>
+    <Link to="/contactUs">
+    <Nav.Link href="#link">Contact Us</Nav.Link>
     </Link>
     {/* <NavDropdown title="Options" id="basic-nav-dropdown">
       <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
