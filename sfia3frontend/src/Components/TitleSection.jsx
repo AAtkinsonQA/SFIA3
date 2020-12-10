@@ -18,7 +18,7 @@ return(
             class="btn btn-lg btn-light explore-button">Explore</button> */}
             <div class="col text-center">
         <Form className="searchbar">
-        <FormControl type="text" placeholder="Search for an issue.." className="mr-sm-2"/>
+        <FormControl type="text" placeholder="Search QA Community Service..." className="mr-sm-2"/>
         </Form>
         </div>
         </div>

@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Row } from 'react-bootstrap';
 import { Col, Container } from 'react-bootstrap';
-import { Form } from 'react-bootstrap';
 import SiteNavbar from '../SiteNavbar';
 import Ticket from '../Ticket';
-import Data from './ticket.json';
 import DetailedTicket from '../DetailedTicket';
 import axios from 'axios';
 

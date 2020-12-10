@@ -80,9 +80,11 @@
 .shaded{
   background-color: #dadada;
 }
-.shaded2{
-  background-color: rgb(145, 14, 14);
+
+.shaded.create.col-sm-4 {
+  background-color: #ffffff;
 }
+
 .searchbar{
   padding-top: 5em;
 }
