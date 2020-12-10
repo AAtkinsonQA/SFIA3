@@ -26,21 +26,17 @@ describe(`Form Testing`, () => {
 
         it(`should call the handleSubmit() when the submit button is clicked`, () => {
             // arrange
-            const { container } = render(<CreateTicket />);
+            const mockHandle = jest.fn();
+            const { container } = render(<CreateTicket onSubmit={mockHandle}/>);
             const titleInput = container.querySelector(`[name="title"]`);
             const submitButton = container.querySelector(`[type="submit"]`);
-            const mockHandle = jest.fn();
-
+            submitButton.onClick= mockHandle();
             // act
             //1. simulated typing
             //2. click button
-            userEvent.type(titleInput, data);
             fireEvent.click(submitButton);
-
             // assert
-            // expect(titleInput.value).toBe('');
             expect(mockHandle).toBeCalled();
-            // expect(mockSubmit).toHaveBeenCalledWith({ title: data });
         })
     })
 })

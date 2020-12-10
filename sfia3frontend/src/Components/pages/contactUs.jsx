@@ -35,6 +35,7 @@ const ContactUs = () => {
                                     required
                                     type="text"
                                     placeholder="First name"
+                                    name="firstname"
                                 />
                                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                             </Form.Group>

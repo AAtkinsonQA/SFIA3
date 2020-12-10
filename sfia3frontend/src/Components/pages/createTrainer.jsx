@@ -4,7 +4,6 @@ import { InputGroup } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
-import SiteNavbar from '../SiteNavbar.jsx';
 import axios from 'axios';
 import { PATH } from '../../constants.json';
 
@@ -16,6 +15,7 @@ const CreateTrainer = () => {
     const [cohort, setCohort] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setconfirmPassword] = useState('');
+    
     const handleSubmit = (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
@@ -46,7 +46,6 @@ const CreateTrainer = () => {
 
     return (
         <>
-        <SiteNavbar/>
         <Container fluid>
             <Row>
                 <Col className="shaded create" sm={4}>This is the side bar</Col>
