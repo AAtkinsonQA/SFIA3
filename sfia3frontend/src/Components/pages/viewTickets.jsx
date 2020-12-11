@@ -4,6 +4,7 @@ import { Col, Container } from "react-bootstrap";
 import SiteNavbar from "../SiteNavbar";
 import Ticket from "../Ticket";
 import DetailedTicket from "../DetailedTicket";
+import TicketInfo from "../Ticketinfo";
 import axios from "axios";
 import { PATH } from "../../constants.json";
 
@@ -17,26 +18,25 @@ const ViewTickets = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch("http://gateway-ip:8080/api/readTickets", {
-        method: "GET",
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      })
-        .then((response) => {
-          setLoaded(true);
-          return response.json();
+      axios
+        .get("http://api/readTickets", {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
         })
-        .then((data) => {
-          console.log(data.data);
-          setData(data.data);
-          console.log(typeof data.data);
-        })
-        .catch((error) => {
-          console.error(error);
-          setLoaded(true);
-          setError(error);
-        });
+        // .then(res => res)
+        .then(
+          (response) => {
+            setLoaded(true);
+            console.log(response.data);
+            setData(response.data);
+            console.log(typeof data);
+          },
+          (error) => {
+            setLoaded(true);
+            setError(error);
+          }
+        );
     }, 0);
   });
 
@@ -46,7 +46,7 @@ const ViewTickets = () => {
         <Row>
           <Col className="shaded create" sm={4}>
             {" "}
-            {ticket && <TicketInfo info={currentTicket}/>}
+            {currentTicket && <TicketInfo info={currentTicket} />}
           </Col>
           <Col className="shaded create" sm={8}>
             {data.map((ticket) => (
@@ -58,7 +58,6 @@ const ViewTickets = () => {
                 description={ticket.description}
                 timeCreated={ticket.timeCreated}
                 info={ticket}
-                stateQuery={query}
                 updateState={(ticket) => setCurrentTicket(ticket)}
               />
             ))}
