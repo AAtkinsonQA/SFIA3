@@ -3,6 +3,8 @@ import {Card, Button} from "react-bootstrap";
 import Data from "./pages/ticket.json";
 import axios from 'axios';
 import TicketInfo from "./Ticketinfo.jsx";
+import { PATH } from '../constants.json';
+
 
 const DetailedTicket = (props) => {
 
@@ -13,7 +15,7 @@ const DetailedTicket = (props) => {
     useEffect(() => {
         // setTimeout(() => {
 
-            axios.get("http://localhost:8080/ticket/readTicket/" + props.stateQuery
+            axios.get(PATH + "/readTicket/" + props.stateQuery
             ,
                 {
                     headers: {

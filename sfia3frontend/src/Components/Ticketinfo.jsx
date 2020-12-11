@@ -27,7 +27,7 @@ const data = {
   "status" : true
 }
 
-axios.put("http://localhost:8080/ticket/updateTicket/" + ticketid, data)
+axios.put(PATH + "/updateTicket/" + ticketid, data)
 .then(response => {
   console.log(response);
   setSolution('');
