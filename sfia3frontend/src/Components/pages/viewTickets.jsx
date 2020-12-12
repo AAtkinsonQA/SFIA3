@@ -10,7 +10,7 @@ import { PATH } from "../../constants.json";
 
 const ViewTickets = () => {
   //pass function to check whether more info is clicked
-  const [currentTicket, setCurrentTicket] = useState({});
+  const [currentTicket, setCurrentTicket] = useState(``);
 
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
@@ -19,7 +19,7 @@ const ViewTickets = () => {
   useEffect(() => {
     setTimeout(() => {
       axios
-        .get("http://api/readTickets", {
+        .get("http://localhost:8080/ticket/readTickets", {
           headers: {
             "Access-Control-Allow-Origin": "*",
           },
@@ -28,16 +28,13 @@ const ViewTickets = () => {
         .then(
           (response) => {
             setLoaded(true);
-            console.log(response.data);
-            setData(response.data);
-            console.log(typeof data);
-          },
+            setData(response.data);          },
           (error) => {
             setLoaded(true);
             setError(error);
           }
         );
-    }, 0);
+    }, 5000);
   });
 
   return (
@@ -45,8 +42,7 @@ const ViewTickets = () => {
       <Container fluid>
         <Row>
           <Col className="shaded create" sm={4}>
-            {" "}
-            {currentTicket && <TicketInfo info={currentTicket} />}
+            {currentTicket && <DetailedTicket stateQuery={currentTicket} />}
           </Col>
           <Col className="shaded create" sm={8}>
             {data.map((ticket) => (
@@ -58,7 +54,10 @@ const ViewTickets = () => {
                 description={ticket.description}
                 timeCreated={ticket.timeCreated}
                 info={ticket}
-                updateState={(ticket) => setCurrentTicket(ticket)}
+                updateState={(event) => {
+                  setCurrentTicket(event.currentTarget.value);
+                  console.log({currentTicket});}
+                }
               />
             ))}
           </Col>

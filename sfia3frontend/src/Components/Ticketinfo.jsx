@@ -10,12 +10,11 @@ const [solution, setSolution] = useState(``);
 
 
 let obj = props.info;
-
+console.log(obj);
 let ticketid = obj.id;
-// console.log(obj[0]);
-//console.log(props.stateQuery)
-//console.log(props.updateState)
-//console.log(obj.id)
+console.log(ticketid);
+
+
 const handleUpdate = e => {
 e.preventDefault();
 const data = {
@@ -27,7 +26,7 @@ const data = {
   "status" : true
 }
 
-axios.put(PATH + "/updateTicket/" + ticketid, data)
+axios.put("http://localhost:8080/ticket/updateTicket/" + ticketid, data)
 .then(response => {
   console.log(response);
   setSolution('');

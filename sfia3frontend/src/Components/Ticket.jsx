@@ -10,14 +10,14 @@ const Ticket = (props) => {
   // let formattedDate = stringDate.replace("T"," ").slice(0,19);
 
   const updateState = props.updateState;
-  console.log(updateState);
+ 
 
   let id = props.id;
-  console.log(props.id);
-  console.log(id);
+  // console.log(props.id);
+  // console.log(id);
 
   const handleSubmit = (event) => {
-    axios.delete(PATH + '/deleteTicket/' + props.id).then(response => {
+    axios.delete(PATH + '/deleteTicket/'  + props.id).then(response => {
       console.log(response);
     });
   }

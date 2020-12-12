@@ -13,7 +13,7 @@ const DetailedTicket = (props) => {
     const [isLoaded, setLoaded] = useState(false);
 
     useEffect(() => {
-        // setTimeout(() => {
+        setTimeout(() => {
 
             axios.get(PATH + "/readTicket/" + props.stateQuery
             ,
@@ -32,7 +32,7 @@ const DetailedTicket = (props) => {
                     setLoaded(true);
                     setError(error);
                 })
-        // }, )
+        }, 1000)
     })
 
 const date = new Date(Date.now()) //temporary date
