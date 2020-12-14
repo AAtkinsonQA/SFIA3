@@ -40,6 +40,7 @@
 #title .container-fluid{
   padding: 3% 15% 7%;
   background-color: #dadada;
+  background-image: url("https://i.imgur.com/hxGZzW8.jpg") !important;
 }
 
 .big-heading{
@@ -55,8 +56,9 @@
 }
 
 #title{
-  background-color: #004050;
+    background-color: #004050;
     color: #004050;
+    background-image: url("https://i.imgur.com/hxGZzW8.jpg") !important;
   }
 
 
@@ -86,7 +88,7 @@
 }
 
 .searchbar{
-  padding-top: 5em;
+  transform: translateY(9.375em);
 }
 
 .container-fluid{
@@ -107,4 +109,8 @@
   color:black;
   padding-top: 2em;
   height: 100vh;
+}
+
+.searchbar{
+  height:5em;
 }

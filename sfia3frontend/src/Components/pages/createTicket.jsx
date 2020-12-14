@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Row, Col, Form, InputGroup, Button, Container, Tooltip, OverlayTrigger } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { Row, Col, Form, InputGroup, Button, Container, Tooltip, OverlayTrigger , Modal} from 'react-bootstrap';
 import SiteNavbar from '../SiteNavbar.jsx';
 import axios from 'axios';
 import { PATH } from '../../constants.json';
@@ -18,6 +19,36 @@ const renderTooltip = (props) => (
     </Tooltip>
 );
 
+function MyVerticallyCenteredModal(props) {
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Ticket Submitted!
+        </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <h4>A trainer will review your issue and be in contact shortly.</h4>
+                <p>
+                </p>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button onClick={props.onHide}>Close</Button>
+                <Link to="/viewTickets">
+                    <Button renderAs="button">
+                        <span>View Tickets</span>
+                    </Button>
+                </Link>
+            </Modal.Footer>
+        </Modal>
+    );
+}
+
 const CreateTicket = () => {
     const [validated, setValidated] = useState(false);
     const [title, setTitle] = useState('');
@@ -27,6 +58,8 @@ const CreateTicket = () => {
     const [urgency, setUrgency] = useState('');
     const [email, setEmail] = useState('');
     const [topic, setTopic] = useState('');
+    const [modalShow, setModalShow] = useState(false);
+
     const handleSubmit = (event) => {
         const form = event.target;
         event.preventDefault();
@@ -52,6 +85,7 @@ const CreateTicket = () => {
             setDescription('');
             setEmail('');
             setValidated(false);
+            setModalShow(true);
         });
         setValidated(true);
     };
@@ -210,6 +244,10 @@ const CreateTicket = () => {
                     </Col>
                 </Row>
             </Container>
+            <MyVerticallyCenteredModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
         </>
     );
 
