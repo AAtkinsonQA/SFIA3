@@ -15,6 +15,6 @@ buildpush() {
  
 buildpush create
 buildpush get
-buildpush getSingle
+buildpush getsingle
 buildpush delete
 buildpush update
