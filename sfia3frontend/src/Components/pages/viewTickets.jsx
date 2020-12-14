@@ -34,7 +34,7 @@ const ViewTickets = () => {
             setError(error);
           }
         );
-    }, 5000);
+    }, 2000);
   });
 
   return (
@@ -54,6 +54,7 @@ const ViewTickets = () => {
                 description={ticket.description}
                 timeCreated={ticket.timeCreated}
                 info={ticket}
+                solution={ticket.solution}
                 updateState={(event) => {
                   setCurrentTicket(event.currentTarget.value);
                   console.log({currentTicket});}

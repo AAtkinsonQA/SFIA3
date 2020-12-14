@@ -40,19 +40,24 @@ return(
     <>
     <Card>
         <Card.Header as="h5">{obj.timeCreated}</Card.Header>
-        <Card.Body>
+        <Card.Body style = {{textAlign:"left"}} >
           <Card.Title>{obj.title}</Card.Title>
           <Card.Text>
+            <p>Posted by: </p>
             {obj.author}
             </Card.Text>
             <Card.Text>
+              <p>Description:</p>
             {obj.description}
+          </Card.Text>
+          <Card.Text>
+            <p>Solution: </p>
+            {obj.solution}
           </Card.Text>
           <div>
             <Form onSubmit={handleUpdate}>
             <input name="solution" type="text" onChange={e => setSolution(e.target.value)} />
-            
-          <Button type= "submit" style = {{marginRight:"2em"}} variant="primary" >Add Solution</Button>
+          <Button type= "submit" style = {{margin:"2em"}} variant="primary" >Add Solution</Button>
           </Form>
           </div>
         </Card.Body>
