@@ -7,7 +7,7 @@ const Ticket = (props) => {
   const ticketinfo = props.info;
 
   let stringDate = props.timeCreated;
-  let formattedDate = stringDate.replace("T"," ").slice(0,19);
+  let formattedDate = stringDate.replace("T", " ").slice(0, 19);
 
   const updateState = props.updateState;
   console.log(updateState);

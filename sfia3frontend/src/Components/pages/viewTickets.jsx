@@ -22,6 +22,7 @@ const ViewTickets = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
     const [isLoaded, setLoaded] = useState(false);
+    const [ticketShow, setTicketShow] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {
@@ -56,7 +57,8 @@ const ViewTickets = () => {
                     <Col className="shaded create" sm={4}> View Tickets
             <DetailedTicket
                             stateQuery={query}
-
+                            show={ticketShow}
+                            onHide={() => setTicketShow(false)}
                         />
                     </Col>
                     <Col className="shaded create" sm={8}>
