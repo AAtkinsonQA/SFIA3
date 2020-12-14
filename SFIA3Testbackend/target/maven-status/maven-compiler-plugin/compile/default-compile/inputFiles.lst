@@ -1,0 +1,6 @@
+/home/qa/Desktop/SFIA3/Project/SFIA3/SFIA3backend/src/main/java/com/qa/TicketBackend/rest/TicketController.java
+/home/qa/Desktop/SFIA3/Project/SFIA3/SFIA3backend/src/main/java/com/qa/TicketBackend/persistence/repo/TicketRepo.java
+/home/qa/Desktop/SFIA3/Project/SFIA3/SFIA3backend/src/main/java/com/qa/TicketBackend/persistence/domain/Ticket.java
+/home/qa/Desktop/SFIA3/Project/SFIA3/SFIA3backend/src/main/java/com/qa/TicketBackend/service/TicketService.java
+/home/qa/Desktop/SFIA3/Project/SFIA3/SFIA3backend/src/main/java/com/qa/TicketBackend/TicketBackendApplication.java
+/home/qa/Desktop/SFIA3/Project/SFIA3/SFIA3backend/src/main/java/com/qa/TicketBackend/utils/MyBeanUtils.java
