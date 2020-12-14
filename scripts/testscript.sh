@@ -2,9 +2,10 @@
 
 rm -rf SFIA3
 git clone --branch JenkinsTest https://github.com/qatrainingjaguila/SFIA3.git
+cd SFIA3/MicroServices
 
 testmc() {
-    cd SFIA3/MicroServices/$1
+    cd $1
     mvn test
     cd ..
 }
