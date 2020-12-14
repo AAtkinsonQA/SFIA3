@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: update
-        image: rohithan9615/update
+        image: qatrainingjaguila/sfia3-update
         imagePullPolicy: "Always"
         ports:
         - containerPort: 8084

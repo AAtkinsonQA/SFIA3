@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: qatrainingjaguila/frontendsfia3
+        image: qatrainingjaguila/sfia3-frontend:latest
         imagePullPolicy: "Always"
         ports:
         - containerPort: 3000
