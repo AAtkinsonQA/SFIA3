@@ -35,5 +35,4 @@ spec:
   - protocol: TCP
     port: 8084
     targetPort: 8084
-apiVersion: apps/v1
   type: ClusterIP
