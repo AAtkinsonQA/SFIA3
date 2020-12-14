@@ -6,8 +6,8 @@ cd SFIA3
 
 buildpush() {
     cd MicroServices/$1
-    docker build -t qatrainingjaguila/sfia3-$1:latest .
-    docker push qatrainingjaguila/sfia3-$1:latest
+    sudo docker build -t qatrainingjaguila/sfia3-$1:latest .
+    sudo docker push qatrainingjaguila/sfia3-$1:latest
     #docker build -t nexus-IP:repo-port/sfia3-$1:latest .
     #docker push nexus-IP:repo-port/sfia3-$1:latest
     cd ../..
