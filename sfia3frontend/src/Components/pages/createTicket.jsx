@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Row, Col, Form, InputGroup, Button, Container, Tooltip, OverlayTrigger , Modal} from 'react-bootstrap';
+import { Row, Col, Form, InputGroup, Button, Container, Tooltip, OverlayTrigger, Modal } from 'react-bootstrap';
 import SiteNavbar from '../SiteNavbar.jsx';
 import axios from 'axios';
 import { PATH } from '../../constants.json';
