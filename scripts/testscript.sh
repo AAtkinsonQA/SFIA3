@@ -1,12 +1,12 @@
 #! /bin/bash
 
 rm -rf SFIA3
-git clone --branch backend xxxx.git
+git clone --branch JenkinsTest https://github.com/qatrainingjaguila/SFIA3.git
 
 testmc() {
-    cd SFIA3/$1
+    cd SFIA3/MicroServices/$1
     mvn test
-    cd ..
+    cd ../..
 }
 
 testmc create

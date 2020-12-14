@@ -1,17 +1,19 @@
 #! /bin/bash
 
 rm -rf SFIA3
-git clone --branch backend xxxx.git
+git clone --branch JenkinsTest https://github.com/qatrainingjaguila/SFIA3.git
 cd SFIA3
 
 buildpush() {
-    cd $1
-    docker build -t nexus-IP:repo-port/sfia3-$1:latest .
-    docker push nexus-IP:repo-port/sfia3-$1:latest
-    cd ..
+    cd MicroServices/$1
+    docker build -t qatrainingjaguila/sfia3-$1:latest .
+    docker push qatrainingjaguila/sfia3-$1:latest
+    #docker build -t nexus-IP:repo-port/sfia3-$1:latest .
+    #docker push nexus-IP:repo-port/sfia3-$1:latest
+    cd ../..
 }
  
-buildpush create 
+buildpush create
 buildpush get
 buildpush getSingle
 buildpush delete
