@@ -33,7 +33,6 @@ spec:
     app: update
   ports:
   - protocol: TCP
-apiVersion: apps/v1
     port: 8084
     targetPort: 8084
 apiVersion: apps/v1
