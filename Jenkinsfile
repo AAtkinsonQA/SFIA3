@@ -1,5 +1,9 @@
 pipeline {
   agent any
+  environment{
+    NEXUS_IP = credentials('NEXUS_VM_IP')
+    TESTVM_IP = credentials('TEST_VM_IP')
+  }
   stages {
     stage('Run tests') {
       steps {
