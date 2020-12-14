@@ -40,7 +40,9 @@
 #title .container-fluid{
   padding: 3% 15% 7%;
   background-color: #dadada;
-  background-image: url("https://i.imgur.com/hxGZzW8.jpg") !important;
+  background-image: url("https://i.imgur.com/Dgx9bjZ.jpg") !important;
+  background-size: auto;
+  
 }
 
 .big-heading{
@@ -58,7 +60,6 @@
 #title{
     background-color: #004050;
     color: #004050;
-    background-image: url("https://i.imgur.com/hxGZzW8.jpg") !important;
   }
 
 
