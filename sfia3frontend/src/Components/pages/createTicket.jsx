@@ -78,7 +78,7 @@ const CreateTicket = () => {
             email,
             topic
         }
-        axios.post(PATH + '/createTicket', data).then(response => {
+        axios.post('api/createTicket', data).then(response => {
             setfirstName('');
             setlastName('');
             setTitle('');

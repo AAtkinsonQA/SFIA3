@@ -14,7 +14,7 @@ const [isLoaded, setLoaded] = useState(false);
 useEffect(() => {
   setTimeout(() => {
     axios
-      .get("http://localhost:8080/ticket/readTickets", {
+      .get("api/readTickets", {
         headers: {
           "Access-Control-Allow-Origin": "*",
         },
