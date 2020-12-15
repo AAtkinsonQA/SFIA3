@@ -36,7 +36,7 @@ public class GetController {
 		this.rest = builder.build();
 	}
 
-	@GetMapping("/ticket/readTickets")
+	@GetMapping("/")
 	public ResponseEntity<List<Ticket>> getTicket() {
 		return ResponseEntity.ok(this.service.getTicket());
 	}
