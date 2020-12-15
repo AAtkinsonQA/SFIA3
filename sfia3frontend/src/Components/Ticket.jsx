@@ -20,35 +20,40 @@ const Ticket = (props) => {
   }
   var urgency = props.urgency
   var textUrgency = props.urgency
-  if (props.urgency == "low") {
+  if (props.urgency === "low") {
     urgency = "primary";
   }
-  if (props.urgency == "medium") {
+  if (props.urgency === "medium") {
     urgency = "warning";
   }
-  if (props.urgency == "high") {
+  if (props.urgency === "high") {
     urgency = "danger";
   }
-  if (props.urgency == "low") {
+  if (props.urgency === "low") {
     textUrgency = "Low Urgency";
   }
-  if (props.urgency == "medium") {
+  if (props.urgency === "medium") {
     textUrgency = "Medium Urgency";
   }
-  if (props.urgency == "high") {
+  if (props.urgency === "high") {
     textUrgency = "High Urgency";
   }
   var resolved = props.status
   var textResolve = props.status
-  if (props.status == true) {
+  if (props.status === true) {
     resolved = "success";
     textResolve = "Resolved"
   }
-  if (props.status == false) {
+  if (props.status === false) {
     resolved = "light";
     textResolve = "No Solution"
   }
-
+  let minute = ""
+  if (props.timeCreated[4] < 10) {
+    minute = "0"+props.timeCreated[4].toString()
+  } else {
+    minute = props.timeCreated
+  }
   return (
     <>
       <Card border="secondary" >
@@ -61,7 +66,7 @@ const Ticket = (props) => {
               <Row>
               </Row>
               <Row>
-               {props.timeCreated[3]}:{props.timeCreated[4]} <br/>{props.timeCreated[2]}/{props.timeCreated[1]}/{props.timeCreated[0]}
+              {props.timeCreated[3]}:{minute} <br/>{props.timeCreated[2]}/{props.timeCreated[1]}/{props.timeCreated[0]}
               </Row>
             </Col>
           </Row>

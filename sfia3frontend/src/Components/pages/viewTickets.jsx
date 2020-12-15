@@ -82,7 +82,7 @@ const ViewTickets = () => {
             {currentTicket && <DetailedTicket stateQuery={currentTicket} />}
           </Col>
           <Col className="shaded create" sm={8}>
-          <h3>Ticket Filter</h3>
+          <h3 >Ticket Filter</h3>
               <Form onSubmit={handleSubmit}>
                   <Form.Row>
                       <Form.Group as={Col} md="4" controlId="">

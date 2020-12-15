@@ -62,12 +62,8 @@
   padding-top: 1rem;
   font-family:'Raleway',Montserrat,sans-serif;
   color: #004050;
-  }
-  .btn-primary {
-    color: #fff;
-    background-color:rgb(61, 172, 57) !important;
-    border-color: rgb(61, 172, 57) !important;
-  }
+}
+
 .shaded{
   background-color: #dadada;
 }
@@ -153,11 +149,6 @@
   color: #004050;
   }
 
-  .btn-primary {
-    color: #fff;
-    background-color:rgb(61, 172, 57) !important;
-    border-color: rgb(61, 172, 57) !important;
-  }
 
 .shaded{
   background-color: #dadada;
