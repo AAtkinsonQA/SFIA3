@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: getsingle
-        image: qatrainingjaguila/sfia3-getsingle
+        image: jonathanjhunt/sfia3-getsingle
         imagePullPolicy: "Always"
         ports:
         - containerPort: 8081

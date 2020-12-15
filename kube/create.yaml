@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: createcont
-        image: qatrainingjaguila/sfia3-create
+        image: jonathanjhunt/sfia3-create
         imagePullPolicy: "Always"
         ports:
         - containerPort: 8083

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: delete
-        image: qatrainingjaguila/sfia3-delete
+        image: jonathanjhunt/sfia3-delete
         imagePullPolicy: "Always"
         ports:
         - containerPort: 8085

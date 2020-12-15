@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: get
-        image: qatrainingjaguila/sfia3-get
+        image: jonathanjhunt/sfia3-get
         imagePullPolicy: "Always"
         ports:
         - containerPort: 8085
