@@ -61,7 +61,7 @@ const Ticket = (props) => {
               <Row>
               </Row>
               <Row>
-                {props.timeCreated}
+               {props.timeCreated[3]}:{props.timeCreated[4]} <br/>{props.timeCreated[2]}/{props.timeCreated[1]}/{props.timeCreated[0]}
               </Row>
             </Col>
           </Row>
