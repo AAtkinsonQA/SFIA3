@@ -34,8 +34,6 @@ axios.put("api/updateTicket/ticket/updateTicket/" + ticketid, data)
 .catch(console.log('fail'));
 };
 
-let stringDate = obj.timeCreated;
-let formattedDate = stringDate.replace("T"," ").slice(0,19);
 
 return( 
     <>
