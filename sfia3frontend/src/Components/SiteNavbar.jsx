@@ -34,7 +34,7 @@ return(
 <Navbar.Collapse id="basic-navbar-nav">
   <Nav className="mr-auto">
     <Link to="/createTicket">
-    <Nav.Link href="#link">Create Tickets</Nav.Link>
+    <Nav.Link href="#link">Create New Ticket</Nav.Link>
     </Link>
     <Link to="/viewTickets">
     <Nav.Link href="#link">View Tickets</Nav.Link>

@@ -11,7 +11,7 @@ pipeline {
       sh "ssh -o StrictHostKeyChecking=no ubuntu@$TESTVM_IP < scripts/testscript.sh"
       }
       }
-    stage('Push images to nexus') {
+    stage('Build and push images') {
       steps {
       sh "chmod a+x ./scripts/buildbackend.sh"
       sh "ssh -o StrictHostKeyChecking=no ubuntu@$NEXUS_IP < scripts/buildbackend.sh"

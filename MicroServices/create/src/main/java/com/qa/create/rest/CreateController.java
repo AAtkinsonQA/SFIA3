@@ -35,7 +35,7 @@ public class CreateController {
 		this.rest = builder.build();
 	}
 
-	@PostMapping("/ticket/createTicket")
+	@PostMapping("/")
 	public ResponseEntity<Ticket> createTicket(@RequestBody Ticket ticket) {
 		return new ResponseEntity<Ticket>(this.service.createTicket(ticket), HttpStatus.CREATED);
 	}
