@@ -12,6 +12,6 @@ testmc() {
 
 testmc create
 testmc get
-testmc getSingle
+testmc getsingle
 testmc delete
 testmc update
