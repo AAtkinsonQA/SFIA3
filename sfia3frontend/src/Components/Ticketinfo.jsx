@@ -70,12 +70,10 @@ return(
           </Row>
           <Row>
             <Col>
-            </Col>
-            <Col>
             <div>
             <Form onSubmit={handleUpdate}>
             <input name="solution" type="text" onChange={e => setSolution(e.target.value)} />
-          <Button type= "submit" style = {{marginRight:"1em"}} variant="primary" >Add Solution</Button>
+          <Button type= "submit" style = {{marginLeft:"2em"}} variant="primary" >Add Solution</Button>
           </Form>
           </div>
             </Col>
