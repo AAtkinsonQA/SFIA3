@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
-import { Button, Container, Modal } from 'react-bootstrap';
-import { InputGroup } from 'react-bootstrap';
-import { Row } from 'react-bootstrap';
-import { Col } from 'react-bootstrap';
-import { Form } from 'react-bootstrap';
+import React, { useState, useEffect } from "react";
+import { Button, Container, Modal, Row, Col, Form, Card } from 'react-bootstrap';
 import { SERVICE_ID } from '../../serviceid.json'
 import { TEMPLATE_ID } from '../../templateid.json'
 import { USER_ID } from '../../userid.json'
-import SiteNavbar from '../SiteNavbar.jsx';
 import emailjs from 'emailjs-com';
-import { init } from 'emailjs-com';
-import { Link } from 'react-router-dom';
-
+import Ticket from "../Ticket";
+import DetailedTicket from "../DetailedTicket";
+import axios from "axios";
 function MyVerticallyCenteredModal(props) {
     return (
         <Modal
@@ -43,7 +38,32 @@ const ContactUs = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [modalShow, setModalShow] = useState(false);
+    const [currentTicket, setCurrentTicket] = useState(``);
+    const [data, setData] = useState([]);
+    const [error, setError] = useState(null);
+    const [isLoaded, setLoaded] = useState(false);
 
+    useEffect(() => {
+        setTimeout(() => {
+            axios
+                .get("http://localhost:8080/ticket/readTickets", {
+                    headers: {
+                        "Access-Control-Allow-Origin": "*",
+                    },
+                })
+                // .then(res => res)
+                .then(
+                    (response) => {
+                        setLoaded(true);
+                        setData(response.data);
+                    },
+                    (error) => {
+                        setLoaded(true);
+                        setError(error);
+                    }
+                );
+        }, 2000);
+    });
     function handleSubmit(e) {
         e.preventDefault();
 
@@ -61,7 +81,75 @@ const ContactUs = () => {
         <>
             <Container fluid>
                 <Row>
-                    <Col className="shaded create" sm={4}>This is the side bar</Col>
+                    <Col className="shaded create" sm={4}>
+                        <h1>Contact Us
+            
+                        </h1>
+                        <div class="meetTeam"><p>Thankyou for using the QA Community Ticketing Service.</p> This service is still in early
+                         development, so if you discover any issues, or have any questions, please feel free to contact us using the form provided. </div>
+                        <br></br>
+                        <h1>Meet the Team
+                        </h1>
+                        <Card style={{ 
+                        }}>
+                            <Card.Img variant="top" src="https://i.imgur.com/CPku8Hr.jpeg" />
+                            <Card.Body>
+                                <Card.Title>Jon</Card.Title>
+                                <Card.Text>
+                                    He's alright I guess....
+    </Card.Text>
+                                <Button variant="primary">Github</Button>
+                            </Card.Body>
+                        </Card>
+                        <br></br>
+                        <Card style={{
+                        }}>
+                            <Card.Img variant="top" src="https://i.imgur.com/EuhWrd7.jpg" />
+                            <Card.Body>
+                                <Card.Title>Carlos</Card.Title>
+                                <Card.Text>
+                                    He's alright I guess....
+    </Card.Text>
+                                <Button variant="primary">Github</Button>
+                            </Card.Body>
+                        </Card>
+                        <br></br>
+                        <Card style={{
+                        }}>
+                            <Card.Img variant="top" src="https://i.imgur.com/3KEnZuT.jpeg" />
+                            <Card.Body>
+                                <Card.Title>Rohit</Card.Title>
+                                <Card.Text>
+                                    He's alright I guess....
+    </Card.Text>
+                                <Button variant="primary">Github</Button>
+                            </Card.Body>
+                        </Card>
+                        <br></br>
+                        <Card style={{
+                        }}>
+                            <Card.Img variant="top" src="https://i.imgur.com/WJ8tm5S.jpeg" />
+                            <Card.Body>
+                                <Card.Title>Scott</Card.Title>
+                                <Card.Text>
+                                    He's alright I guess....
+    </Card.Text>
+                                <Button variant="primary">Github</Button>
+                            </Card.Body>
+                        </Card>
+                        <br></br>
+                        <Card style={{
+                        }}>
+                            <Card.Img variant="top" src="https://i.imgur.com/iaQGWLC.jpg" />
+                            <Card.Body>
+                                <Card.Title>Bertie</Card.Title>
+                                <Card.Text>
+                                    He's alright I guess....
+    </Card.Text>
+                                <Button variant="primary">Github</Button>
+                            </Card.Body>
+                        </Card>
+                    </Col>
                     <Col className="shaded create" sm={8}>
                         <Form noValidate validated={validated} onSubmit={handleSubmit}>
 

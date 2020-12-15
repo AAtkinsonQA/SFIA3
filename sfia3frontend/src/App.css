@@ -114,3 +114,51 @@
 .searchbar{
   height:5em;
 }
+.card {
+  border: 2px solid rgb(109, 109, 109)!important;
+  text-align: left;
+}
+
+.cardButton{
+  text-align: right;
+}
+
+.cardHeader{
+  font-size: large;
+  font-style: oblique;
+}
+.author{
+  text-align: left !important;
+  font-style: normal !important;
+}
+.badge-dark {
+    color: #fff;
+    background-color: #4e027a !important;
+}
+
+.badge-light {
+    color: #fff;
+    background-color: #bebebe !important;
+}
+.badge-primary {
+    color: rgb(0, 0, 0) !important;
+    background-color:#ffdc15 !important;
+}
+.badge-warning {
+    color: rgb(0, 0, 0) !important;
+    background-color:#f5a906 !important;
+}
+.badge-danger {
+    color: rgb(0, 0, 0) !important;
+    background-color: rgb(255, 58, 58) !important;
+}
+.btn-primary {
+    background-color: rgb(47, 172, 255) !important;
+    border:  rgb(47, 172, 255) !important;
+}
+.meetTeam {
+  font-size: larger;
+  font-style: normal;
+  text-align: left;
+  font-variant: ;
+}

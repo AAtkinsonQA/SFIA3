@@ -206,9 +206,11 @@ const CreateTicket = () => {
                                         name="urgency"
                                         value={urgency}
                                         onInput={e => setUrgency(e.target.value)}>
+                                        <option value="unselected"> Please select an urgency.</option>
                                         <option value="low">Low (Not affecting your ability to work)</option>
                                         <option value="medium">Medium (Somewhat affecting your ability to work)</option>
                                         <option value="high">High (Critically affecting your ability to work)</option>
+
                                     </Form.Control>
                                     <Form.Control.Feedback type="invalid">
                                         Please provide a valid urgency level.

@@ -1,5 +1,5 @@
 import React, { useImperativeHandle } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Badge, Row, Col, Container } from "react-bootstrap";
 import axios from 'axios';
 import { PATH } from '../constants.json';
 
@@ -10,32 +10,103 @@ const Ticket = (props) => {
   // let formattedDate = stringDate.replace("T"," ").slice(0,19);
 
   const updateState = props.updateState;
- 
+
 
   let id = props.id;
   // console.log(props.id);
   // console.log(id);
 
   const handleSubmit = (event) => {
-    axios.delete(PATH + '/deleteTicket/'  + props.id).then(response => {
+    axios.delete(PATH + '/deleteTicket/' + props.id).then(response => {
       console.log(response);
     });
   }
+
+  var urgency = props.urgency
+  var textUrgency = props.urgency
+  if (props.urgency == "low") {
+    urgency = "primary";
+  }
+  if (props.urgency == "medium") {
+    urgency = "warning";
+  }
+  if (props.urgency == "high") {
+    urgency = "danger";
+  }
+  if (props.urgency == "low") {
+    textUrgency = "Low Urgency";
+  }
+  if (props.urgency == "medium") {
+    textUrgency = "Medium Urgency";
+  }
+  if (props.urgency == "high") {
+    textUrgency = "High Urgency";
+  }
+  var resolved = props.status
+  var textResolve = props.status
+  if (props.status == true) {
+    resolved = "success";
+    textResolve = "Resolved"
+  }
+  if (props.status == false) {
+    resolved = "light";
+    textResolve = "No Solution"
+  }
+
+
   return (
     <>
-      <Card>
-        <Card.Header as="h5">{props.timeCreated}</Card.Header>
+      <Card border="secondary" >
+        <Card.Header as="h4">
+          <Row>
+            <Col sm={8}>
+              {props.title}
+            </Col>
+            <Col class="authorDate" sm={4}>
+              <Row>
+
+              </Row>
+              <Row>
+                {props.timeCreated}
+              </Row>
+            </Col>
+          </Row>
+        </Card.Header>
+
         <Card.Body>
-          <Card.Title>{props.title}</Card.Title>
-          <Card.Text>
-            {props.author}
-          </Card.Text>
-          <div>
-            <Button style={{ marginRight: "2em" }} value={id} variant="primary" onClick={updateState}>More Information</Button>
-            <Button onClick={handleSubmit} variant="danger">Delete</Button>
-          </div>
+          <Row>
+            <Col>
+              <Card.Text>
+                <h5 class="author">{props.author}
+                </h5>
+                <p>{props.description} </p>
+              </Card.Text>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              <Card.Text>
+                <h5>
+                  <Badge pill variant={urgency}>{textUrgency} </Badge>{' '}
+                  <Badge pill variant="dark">{props.topic} </Badge>{' '}
+
+                  <Badge pill variant={resolved}>{textResolve} </Badge>{' '}
+                </h5>
+
+              </Card.Text>
+            </Col>
+            <Col>
+              <div class="cardButton">
+                <Button style={{ marginRight: "1em" }} onClick={handleSubmit} variant="danger">Delete</Button>
+                <Button style={{ marginRight: "1em" }} value={id} variant="primary" onClick={updateState}>More Information</Button>
+              </div>
+            </Col>
+          </Row>
         </Card.Body>
       </Card>
+
+      <br></br>
     </>
   );
 };

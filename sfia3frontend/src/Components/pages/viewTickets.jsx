@@ -28,7 +28,8 @@ const ViewTickets = () => {
         .then(
           (response) => {
             setLoaded(true);
-            setData(response.data);          },
+            setData(response.data);
+          },
           (error) => {
             setLoaded(true);
             setError(error);
@@ -50,6 +51,10 @@ const ViewTickets = () => {
                 key={ticket.id}
                 id={ticket.id}
                 title={ticket.title}
+                topic={ticket.topic}
+                email={ticket.email}
+                status={ticket.status}
+                urgency={ticket.urgency}
                 author={ticket.author}
                 description={ticket.description}
                 timeCreated={ticket.timeCreated}
@@ -57,7 +62,8 @@ const ViewTickets = () => {
                 solution={ticket.solution}
                 updateState={(event) => {
                   setCurrentTicket(event.currentTarget.value);
-                  console.log({currentTicket});}
+                  console.log({ currentTicket });
+                }
                 }
               />
             ))}
