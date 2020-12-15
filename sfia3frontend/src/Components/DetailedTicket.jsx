@@ -15,7 +15,7 @@ const DetailedTicket = (props) => {
     useEffect(() => {
         setTimeout(() => {
 
-            axios.get("api/readTicket/ticket/readTicket" + props.stateQuery
+            axios.get("api/readTicket/ticket/readTicket/" + props.stateQuery
             ,
                 {
                     headers: {
