@@ -26,7 +26,7 @@ const data = {
   "status" : true
 }
 
-axios.put("api/updateTicket/" + ticketid, data)
+axios.put("api/updateTicket/ticket/updateTicket" + ticketid, data)
 .then(response => {
   console.log(response);
   setSolution('');

@@ -19,7 +19,7 @@ const ViewTickets = () => {
   useEffect(() => {
     setTimeout(() => {
       axios
-        .get("api/readTickets", {
+        .get("api/readTickets/ticket/readTickets", {
           headers: {
             "Access-Control-Allow-Origin": "*",
           },
