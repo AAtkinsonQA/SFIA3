@@ -6,6 +6,17 @@ h1{
   font-family: 'Raleway',Montserrat,sans-serif;
   color: #004050;
 }
+
+h2,h3,h4,h5,p{
+  font-family: 'Raleway',Montserrat,sans-serif;
+  color:  #004050;
+}
+
+label{
+  font-family: 'Raleway',Montserrat,sans-serif;
+  color:  #004050;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -99,7 +110,9 @@ h1{
 }
 .card {
   border: 2px solid rgb(109, 109, 109)!important;
+  font-family:'Raleway',Montserrat,sans-serif;
   text-align: left;
+
 }
 .cardButton{
   text-align: right;
@@ -135,6 +148,11 @@ h1{
 .btn-primary {
     background-color: rgb(47, 172, 255) !important;
     border:  rgb(47, 172, 255) !important;
+    font-family: 'Raleway',Montserrat,sans-serif;
+}
+
+.btn-danger {
+  font-family: 'Raleway',Montserrat,sans-serif;
 }
 
 #title{

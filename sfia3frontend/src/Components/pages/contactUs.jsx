@@ -104,10 +104,10 @@ const ContactUs = () => {
                 <Row>
                     <Col className="shaded create" sm={4}>
                         <h1>Contact Us
-            
+                            <br></br>
                         </h1>
-                        <div class="meetTeam"><p>Thank you for using the QA Community Ticketing Service.</p> This service is still in early
-                         development, so if you discover any issues, or have any questions, please feel free to contact us using the form provided. </div>
+                        <div class="meetTeam"><p>Thank you for using the QA Community Ticketing Service.</p> <br></br><p>This service is still in early
+                         development, so if you discover any issues, or have any questions, please feel free to contact us using the form provided. </p></div>
                         <br></br>
                         <h1>Meet the Team
                         </h1>
