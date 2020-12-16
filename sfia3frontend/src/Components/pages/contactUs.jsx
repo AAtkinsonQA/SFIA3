@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Button, Container, Modal, Row, Col, Form, Card } from 'react-bootstrap';
+import { Button, Container, Modal, Row, Col, Form, Card, OverlayTrigger, Tooltip, Badge } from 'react-bootstrap';
 import { SERVICE_ID } from '../../serviceid.json'
 import { TEMPLATE_ID } from '../../templateid.json'
 import { USER_ID } from '../../userid.json'
 import emailjs from 'emailjs-com';
-import Ticket from "../Ticket";
-import DetailedTicket from "../DetailedTicket";
-import axios from "axios";
 function MyVerticallyCenteredModal(props) {
     return (
         <Modal
@@ -31,16 +28,66 @@ function MyVerticallyCenteredModal(props) {
         </Modal>
     );
 }
+const answeringQuestions = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        Answering Questions
+    </Tooltip>
+);
+const frontEnd = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        Front End Development
+    </Tooltip>
+);
+const backEnd = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        Back End Development
+    </Tooltip>
+);
+const devOps = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        DevOps
+    </Tooltip>
+);
+const design = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        Design
+    </Tooltip>
+);
+const bugReports = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        Bug Reports
+    </Tooltip>
+);
+const documentation = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        Documentation
+    </Tooltip>
+);
+const ideasPlanning = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        Ideas and Planning
+    </Tooltip>
+);
+const reviewedPullRequests = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        Reviewed Pull Requests
+    </Tooltip>
+);
+const tests = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+        Testing
+    </Tooltip>
+);
 const ContactUs = () => {
     const [validated, setValidated] = useState(false);
     const [firstName, setfirstName] = useState('');
     const [lastName, setlastName] = useState('');
     const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
     const [modalShow, setModalShow] = useState(false);
-    
+
     function handleSubmit(e) {
         e.preventDefault();
+
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID)
             .then((result) => {
                 console.log(result.text);
@@ -50,6 +97,7 @@ const ContactUs = () => {
         e.target.reset();
         setModalShow(true);
     }
+
     return (
         <>
             <Container fluid>
@@ -58,73 +106,540 @@ const ContactUs = () => {
                         <h1>Contact Us
             
                         </h1>
-                        <div class="meetTeam"><p>Thankyou for using the QA Community Ticketing Service.</p> This service is still in early
+                        <div class="meetTeam"><p>Thank you for using the QA Community Ticketing Service.</p> This service is still in early
                          development, so if you discover any issues, or have any questions, please feel free to contact us using the form provided. </div>
                         <br></br>
                         <h1>Meet the Team
                         </h1>
                         <Card style={{ 
                         }}>
-                            <Card.Img variant="top" src="https://i.imgur.com/CPku8Hr.jpeg" />
+                            <Card.Img variant="top" src="https://i.imgur.com/HW3mVXb.jpg" />
                             <Card.Body>
-                                <Card.Title>Jon</Card.Title>
+                                <Card.Title>Jonathan Hunt</Card.Title>
                                 <Card.Text>
-                                    He's alright I guess....
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={answeringQuestions}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/speech-balloon_1f4ac.png`}
+                                            alt="Answering Questions" />
+                                        
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={frontEnd}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/desktop-computer_1f5a5-fe0f.png`}
+                                            alt="Front End Dev" />
+
+                                    </OverlayTrigger>
+                                    
+                                    
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={bugReports}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/bug_1f41b.png`}
+                                            alt="Bug Reports" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={documentation}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/open-book_1f4d6.png`}
+                                            alt="Documentation" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={ideasPlanning}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/electric-light-bulb_1f4a1.png`}
+                                            alt="Ideas & Planning" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={reviewedPullRequests}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/eyes_1f440.png`}
+                                            alt="Reviewed Pull Requests" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={tests}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/warning_26a0-fe0f.png`}
+                                            alt="Testing" />
+
+                                    </OverlayTrigger>
+                                    
+                                    <br></br>
     </Card.Text>
-                                <Button variant="primary">Github</Button>
+                                <a href="https://github.com/Jonathanjhunt">
+                                    <img className="github"
+                                        src={`https://i.imgur.com/uWteCty.gif`}
+                                        alt="github" />
+                                </a>
+                               {'    '}
+                                <a href="https://www.linkedin.com/in/jonathan-hunt-b01661142/">
+                                    <img className="linkedin"
+                                        src={`https://i.imgur.com/OQUXwNp.jpg`}
+                                        alt="linkedin" />
+                                </a>
+                                  
                             </Card.Body>
                         </Card>
                         <br></br>
                         <Card style={{
                         }}>
-                            <Card.Img variant="top" src="https://i.imgur.com/EuhWrd7.jpg" />
+                            <Card.Img variant="top" src="https://images2.alphacoders.com/520/520945.jpg" />
                             <Card.Body>
-                                <Card.Title>Carlos</Card.Title>
+                                <Card.Title>Carlos Aguila</Card.Title>
                                 <Card.Text>
-                                    He's alright I guess....
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={answeringQuestions}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/speech-balloon_1f4ac.png`}
+                                            alt="Answering Questions" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={frontEnd}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/desktop-computer_1f5a5-fe0f.png`}
+                                            alt="Front End Dev" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={design}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/artist-palette_1f3a8.png`}
+                                            alt="Design" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={backEnd}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/gear_2699-fe0f.png`}
+                                            alt="Back End Development" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={devOps}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/mozilla/36/cloud_2601.png`}
+                                            alt="DevOps" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={bugReports}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/bug_1f41b.png`}
+                                            alt="Bug Reports" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={documentation}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/open-book_1f4d6.png`}
+                                            alt="Documentation" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={ideasPlanning}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/electric-light-bulb_1f4a1.png`}
+                                            alt="Ideas & Planning" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={reviewedPullRequests}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/eyes_1f440.png`}
+                                            alt="Reviewed Pull Requests" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={tests}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/warning_26a0-fe0f.png`}
+                                            alt="Testing" />
+
+                                    </OverlayTrigger>
     </Card.Text>
-                                <Button variant="primary">Github</Button>
+                                <a href="https://github.com/qatrainingjaguila">
+                                    <img className="github"
+                                        src={`https://i.imgur.com/uWteCty.gif`}
+                                        alt="github" />
+                                </a>
+                                {'    '}
+                                <a href="https://www.linkedin.com/in/carlos-a-68750570/">
+                                    <img className="linkedin"
+                                        src={`https://i.imgur.com/OQUXwNp.jpg`}
+                                        alt="linkedin" />
+                                </a>
+                                
                             </Card.Body>
                         </Card>
                         <br></br>
                         <Card style={{
                         }}>
-                            <Card.Img variant="top" src="https://i.imgur.com/3KEnZuT.jpeg" />
+                            <Card.Img variant="top" src="https://i.imgur.com/1QJHloU.png" />
                             <Card.Body>
-                                <Card.Title>Rohit</Card.Title>
+                                <Card.Title>Rohithan Carthigeya</Card.Title>
                                 <Card.Text>
-                                    He's alright I guess....
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={answeringQuestions}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/speech-balloon_1f4ac.png`}
+                                            alt="Answering Questions" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={frontEnd}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/desktop-computer_1f5a5-fe0f.png`}
+                                            alt="Front End Dev" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={design}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/artist-palette_1f3a8.png`}
+                                            alt="Design" />
+
+                                    </OverlayTrigger>
+                                
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={devOps}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/mozilla/36/cloud_2601.png`}
+                                            alt="DevOps" />
+
+                                    </OverlayTrigger>
+                                    
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={documentation}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/open-book_1f4d6.png`}
+                                            alt="Documentation" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={ideasPlanning}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/electric-light-bulb_1f4a1.png`}
+                                            alt="Ideas & Planning" />
+
+                                    </OverlayTrigger>
+                                   
+                                
     </Card.Text>
-                                <Button variant="primary">Github</Button>
+                                <a href="https://github.com/rohithanc">
+                                    <img className="github"
+                                        src={`https://i.imgur.com/uWteCty.gif`}
+                                        alt="github" />
+                                </a>
+                                {'    '}
+                                <a href="https://www.linkedin.com/in/rohithan-carthigeya-8a799a159/">
+                                    <img className="linkedin"
+                                        src={`https://i.imgur.com/OQUXwNp.jpg`}
+                                        alt="linkedin" />
+                                </a>
+                                
                             </Card.Body>
                         </Card>
                         <br></br>
                         <Card style={{
                         }}>
-                            <Card.Img variant="top" src="https://i.imgur.com/WJ8tm5S.jpeg" />
+                            <Card.Img variant="top" src="https://i.imgur.com/e6bFZWP.jpg" />
                             <Card.Body>
-                                <Card.Title>Scott</Card.Title>
+                                <Card.Title>Scott Nicolson</Card.Title>
                                 <Card.Text>
-                                    He's alright I guess....
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={answeringQuestions}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/speech-balloon_1f4ac.png`}
+                                            alt="Answering Questions" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={frontEnd}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/desktop-computer_1f5a5-fe0f.png`}
+                                            alt="Front End Dev" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={design}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/artist-palette_1f3a8.png`}
+                                            alt="Design" />
+
+                                    </OverlayTrigger>
+                                    
+                                
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={bugReports}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/bug_1f41b.png`}
+                                            alt="Bug Reports" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={documentation}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/open-book_1f4d6.png`}
+                                            alt="Documentation" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={ideasPlanning}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/electric-light-bulb_1f4a1.png`}
+                                            alt="Ideas & Planning" />
+
+                                    </OverlayTrigger>
+                                   
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={tests}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/warning_26a0-fe0f.png`}
+                                            alt="Testing" />
+
+                                    </OverlayTrigger>
     </Card.Text>
-                                <Button variant="primary">Github</Button>
+                                <a href="https://github.com/Scottynic112">
+                                    <img className="github"
+                                        src={`https://i.imgur.com/uWteCty.gif`}
+                                        alt="github" />
+                                </a>
+                                {'    '}
+                                <a href="https://www.linkedin.com/in/scott-n-7898a41b0/">
+                                    <img className="linkedin"
+                                        src={`https://i.imgur.com/OQUXwNp.jpg`}
+                                        alt="linkedin" />
+                                </a>
+                                
                             </Card.Body>
                         </Card>
                         <br></br>
                         <Card style={{
                         }}>
-                            <Card.Img variant="top" src="https://i.imgur.com/iaQGWLC.jpg" />
+                            <Card.Img variant="top" src="https://wallpaperaccess.com/full/427393.jpg" />
                             <Card.Body>
-                                <Card.Title>Bertie</Card.Title>
+                                <Card.Title>Bertie Atkinson</Card.Title>
                                 <Card.Text>
-                                    He's alright I guess....
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={answeringQuestions}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/speech-balloon_1f4ac.png`}
+                                            alt="Answering Questions" />
+
+                                    </OverlayTrigger>
+
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={backEnd}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/gear_2699-fe0f.png`}
+                                            alt="Back End Development" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={devOps}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/mozilla/36/cloud_2601.png`}
+                                            alt="DevOps" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={bugReports}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/bug_1f41b.png`}
+                                            alt="Bug Reports" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={documentation}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/open-book_1f4d6.png`}
+                                            alt="Documentation" />
+
+                                    </OverlayTrigger>
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={ideasPlanning}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/microsoft/209/electric-light-bulb_1f4a1.png`}
+                                            alt="Ideas & Planning" />
+
+                                    </OverlayTrigger>
+                                    
+                                    {'    '}
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={tests}
+                                    >
+                                        <img className="emoji"
+                                            src={`https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/apple/271/warning_26a0-fe0f.png`}
+                                            alt="Testing" />
+
+                                    </OverlayTrigger>
     </Card.Text>
-                                <Button variant="primary">Github</Button>
+                                <a href="https://github.com/AAtkinsonQA">
+                                    <img className="github"
+                                        src={`https://i.imgur.com/uWteCty.gif`}
+                                        alt="github" />
+                                </a>
+                                {'    '}
+                                <a href="https://www.linkedin.com/in/bertie-atkinson-b15444184/">
+                                    <img className="linkedin"
+                                        src={`https://i.imgur.com/OQUXwNp.jpg`}
+                                        alt="linkedin" />
+                                </a>
+                                
                             </Card.Body>
                         </Card>
                     </Col>
                     <Col className="shaded create" sm={8}>
                         <Form noValidate validated={validated} onSubmit={handleSubmit}>
+
                             <Form.Row>
                                 <Form.Group as={Col} md="6" controlId="validationCustom01">
                                     <Form.Label>First name</Form.Label>
@@ -138,6 +653,7 @@ const ContactUs = () => {
                                     />
                                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 </Form.Group>
+
                                 <Form.Group as={Col} md="6" controlId="validationCustom02">
                                     <Form.Label>Last name</Form.Label>
                                     <Form.Control
@@ -151,6 +667,7 @@ const ContactUs = () => {
                                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 </Form.Group>
                             </Form.Row>
+
                             <Form.Row>
                                 <Form.Group as={Col} md="12" controlId="validationCustomUsername">
                                     <Form.Label>Email address</Form.Label>
@@ -167,6 +684,7 @@ const ContactUs = () => {
                                 </Form.Group>
                             </Form.Row>
 
+
                             <Form.Row>
                                 <Form.Group as={Col} md="12" controlId="validationCustom03">
                                     <Form.Label>Message</Form.Label>
@@ -179,8 +697,10 @@ const ContactUs = () => {
                                     <Form.Control.Feedback type="invalid">Please provide details of your query.</Form.Control.Feedback>
                                 </Form.Group>
                             </Form.Row>
-                            <Button type="submit">Submit</Button>
+                            <Button type="submit">Send</Button>
+                            
                         </Form>
+
                     </Col>
                 </Row>
             </Container>
@@ -188,6 +708,7 @@ const ContactUs = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
+            
         </>
     );
 }

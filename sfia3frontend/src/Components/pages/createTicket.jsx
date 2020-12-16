@@ -94,7 +94,7 @@ const CreateTicket = () => {
         <>
             <Container fluid>
                 <Row>
-                    <Col className="shaded create" sm={4}>This is the side bar</Col>
+                    <Col className="shaded create" sm={4}></Col>
                     <Col className="shaded create" sm={8}>
                         <Form noValidate validated={validated} onSubmit={handleSubmit}>
                             <Form.Row>

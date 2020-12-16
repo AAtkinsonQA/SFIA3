@@ -199,5 +199,17 @@
   font-size: larger;
   font-style: normal;
   text-align: left;
-  font-variant: ;
+}
+
+.github{
+  height: 40px;
+  width: 40px;
+}
+.linkedin{
+  height: 40px;
+  width: 40px;
+}
+.emoji{
+  height: 25px;
+  width: 25px;
 }
