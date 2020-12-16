@@ -6,7 +6,7 @@ import axios from 'axios';
 import { PATH } from '../../constants.json';
 
 const renderTooltip = (props) => (
-    <Tooltip id="description-tooltip" {...props}>
+    <Tooltip className="hover" id="description-tooltip" {...props}>
         <p>Please provide a detailed description of your issue.</p>
         <p>To ensure trainers can provide a quick and efficient response to your problem, please include the following:</p>
 
@@ -210,6 +210,7 @@ const CreateTicket = () => {
                                         name="urgency"
                                         value={urgency}
                                         onInput={e => setUrgency(e.target.value)}>
+                                        <option value="unselected">Please select an urgency</option>
                                         <option value="low">Low (Not affecting your ability to work)</option>
                                         <option value="medium">Medium (Somewhat affecting your ability to work)</option>
                                         <option value="high">High (Critically affecting your ability to work)</option>

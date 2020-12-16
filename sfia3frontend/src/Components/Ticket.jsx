@@ -77,7 +77,7 @@ const Ticket = (props) => {
               <Card.Text>
                 <h5 class="author">{props.author}
                 </h5>
-                <p>{props.description} </p>
+                <br></br>
               </Card.Text>
             </Col>
           </Row>
