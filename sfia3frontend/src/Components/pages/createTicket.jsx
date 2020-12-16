@@ -96,6 +96,8 @@ const CreateTicket = () => {
                 <Row>
                     <Col className="shaded create" sm={4}></Col>
                     <Col className="shaded create" sm={8}>
+                    <h1>Create New Ticket</h1>
+                    <br></br>
                         <Form noValidate validated={validated} onSubmit={handleSubmit}>
                             <Form.Row>
                                 <Form.Group as={Col} md="4" controlId="validationCustom01">
@@ -172,6 +174,8 @@ const CreateTicket = () => {
                                         value={topic}
                                         onInput={e => setTopic(e.target.value)}>
                                         <option value="Git">Git</option>
+                                        <option value="Windows">Windows</option>
+                                        <option value="Mac">Mac</option>
                                         <option value="Markdown">Markdown</option>
                                         <option value="Jira">Jira</option>
                                         <option value="Java">Java</option>
@@ -225,7 +229,7 @@ const CreateTicket = () => {
                                     >
                                         <Form.Control
                                             as="textarea"
-                                            placeholder="Please provide a description of your issue...."
+                                            placeholder="Please provide a description of your issue....  1000 character limit"
                                             required
                                             name="description"
                                             value={description}

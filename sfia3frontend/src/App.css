@@ -1,6 +1,11 @@
 .App {
   text-align: center;
 }
+
+h1{
+  font-family: 'Raleway',Montserrat,sans-serif;
+  color: #004050;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -213,3 +218,15 @@
   height: 25px;
   width: 25px;
 }
+
+.form-check{
+  transform: translate(-1em);
+  padding-top: 0.6em;
+}
+
+.resetbutton{
+  width: 8em;
+  height: 2.5em;
+  transform: translate(5em,2em);
+}
+
