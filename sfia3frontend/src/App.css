@@ -194,3 +194,10 @@
 .urgencyblock {
   transform: translate(-5em,0em);
 }
+
+.meetTeam {
+  font-size: larger;
+  font-style: normal;
+  text-align: left;
+  font-variant: ;
+}

@@ -52,7 +52,7 @@ const Ticket = (props) => {
   if (props.timeCreated[4] < 10) {
     minute = "0"+props.timeCreated[4].toString()
   } else {
-    minute = props.timeCreated
+    minute = props.timeCreated[4]
   }
   return (
     <>
