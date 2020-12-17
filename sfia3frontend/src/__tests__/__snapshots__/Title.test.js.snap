@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches title snapshot 1`] = `
+Array [
+  <section
+    class="title-section"
+    id="title"
+  >
+    <div
+      class="container-fluid"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-lg-12"
+        >
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <form
+            className="searchbar"
+            onSubmit={[Function]}
+          >
+            <input
+              className="mr-sm-2 form-control"
+              onInput={[Function]}
+              placeholder="Search QA Community Service..."
+              type="text"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>,
+  "",
+]
+`;

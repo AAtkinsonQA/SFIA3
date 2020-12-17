@@ -1,20 +1,28 @@
 HELP.md
-SFIA3backend/target/
+SFIA3Testbackend/target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+Terraform/.terraform/
+Terraform/terraform.tfstate
+Terraform/terraform.tfstate.backup
+Terraform/VPC/variables.tf
+Terraform/SG/variables.tf
+Terraform/RDS/variables.tf
+Terraform/EKS/variables.tf
+Terraform/EC2/variables.tf
 
 ### STS ###
-SFIA3backend/.apt_generated
-SFIA3backend/src/.classpath
-SFIA3backend/.classpath
-SFIA3backend/.factorypath
-SFIA3backend/src/.project
-SFIA3backend/.settings
-SFIA3backend/.springBeans
-SFIA3backend/.sts4-cache
-SFIA3backend/bin/
-SFIA3backend/src/bin/
+SFIA3Testbackend/.apt_generated
+SFIA3Testbackend/src/.classpath
+SFIA3Testbackend/.classpath
+SFIA3Testbackend/.factorypath
+SFIA3Testbackend/src/.project
+SFIA3Testbackend/.settings
+SFIA3Testbackend/.springBeans
+SFIA3Testbackend/.sts4-cache
+SFIA3Testbackend/bin/
+SFIA3Testbackend/src/bin/
 
 ### IntelliJ IDEA ###
 .idea

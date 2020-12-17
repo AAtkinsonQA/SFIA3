@@ -1,0 +1,2 @@
+- name: "Install mysql"
+  script: /home/ubuntu/SFIA3/scripts/mysqlscript.sh
