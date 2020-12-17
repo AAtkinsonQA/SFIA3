@@ -13,7 +13,7 @@ describe(`Form Testing`, () => {
 
             //arrange
             const { container } = render(<ContactUs submit={mockSubmit} />);
-            const titleInput = container.querySelector(`[name="firstname"]`);
+            const titleInput = container.querySelector(`[name="firstName"]`);
             expect(titleInput.value).toEqual(``);
 
             // act - simulated typing

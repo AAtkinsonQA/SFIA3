@@ -72,9 +72,14 @@ return(
             <Col>
             <div>
             <Form onSubmit={handleUpdate}>
-            <input name="solution" type="text" onChange={e => setSolution(e.target.value)} />
-          <Button type= "submit" style = {{marginLeft:"2em"}} variant="primary" >Add Solution</Button>
-          </Form>
+              <Form.Control
+                as="textarea"
+                placeholder="Provide a Solution"
+                name="solution"
+                type="text"
+                onChange={e => setSolution(e.target.value)} />
+              <Button type="submit" style={{ margin: "2em" }} variant="primary" >Add Solution</Button>
+            </Form>
           </div>
             </Col>
           </Row>
