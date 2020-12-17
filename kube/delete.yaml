@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deletecont
+  labels:
+    app: delete
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: delete
+  template:
+    metadata:
+      labels:
+        app: delete
+    spec:
+      containers:
+      - name: delete
+        image: jonathanjhunt/sfia3-delete
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 8085
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: delete-ip
+  #namespace: pipeline
+  labels:
+    app: delete-ip
+spec:
+  selector:
+    app: delete
+  ports:
+  - protocol: TCP
+    port: 8085
+    targetPort: 8085
+  type: ClusterIP

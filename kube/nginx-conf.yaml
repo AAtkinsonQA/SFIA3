@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  # namespace: pipeline
+data:
+  default.conf: |
+       server {
+           listen 80;
+           location / {
+                   proxy_pass http://frontend:3000;
+           }
+           location /api/readTickets {
+                   proxy_pass http://get-ip:8082;
+           }
+           location /api/createTicket{
+                   proxy_pass http://create-ip:8083;
+           }
+           location /api/deleteTicket{
+                   proxy_pass http://delete-ip:8085;
+           }
+           location /api/updateTicket{
+                   proxy_pass http://update-ip:8084;
+           }
+           location /api/readTicket{
+                   proxy_pass http://getsingle-ip:8081;
+           }
+       }
+
+
