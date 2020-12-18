@@ -179,7 +179,7 @@ For the first design, a very simple design was created as a skeleton for the tea
 ![enter image description here](https://i.imgur.com/NdNgz4W.png)
   
 **Final Designs**
-The final design looks alot slicker with some improvements in viewer comfort. The colours and typeface were carried over into the tickets to give a more consistent theme. Additionally, the date was formatted into a more readable structure. 
+The final design looks a lot slicker with some improvements in viewer comfort. The colours and typeface were carried over into the tickets to give a more consistent theme. Additionally, the date was formatted into a more readable structure. 
 In the bottom left corner, badges were used to indicate certain features of the ticket. This is the sub-optimal element of the ticket, as they will primarily go for the title and then this. The badges indicate information to the user which may be helpful, such as urgency, topic and resolved/unresolved. These badges are colour coded to indicate their urgency, and resolved state. (see two images below)
 ![enter image description here](https://i.imgur.com/PJzY0U9.png)
   
@@ -291,7 +291,7 @@ The data is persisted in an AWS RDS database, built using Terraform.
 
   
 
-Development has started on the Java microservices for *Cohorts*, *Trainers* and *Trainees.
+Development has started on the Java microservices for *Cohorts*, *Trainers* and *Trainees*.
 
 Pictured below is a comparison diagram which shows the entities and relationships required to implement this vs the current Minimum Viable Product:
 
