@@ -49,7 +49,7 @@ A Jira board was used to assign tasks and stories to different members of the te
 
   
 
-![Jira Board]([https://i.imgur.com/pIwZami.png](https://i.imgur.com/pIwZami.png))
+![Jira](https://i.imgur.com/pIwZami.png)
 
   
 
