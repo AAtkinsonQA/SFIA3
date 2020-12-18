@@ -196,6 +196,7 @@ In the bottom left corner, badges were used to indicate certain features of the 
 
 
 ***Stretch Goals Create Ticket***
+
 ![Stretch Create Tickets](https://i.imgur.com/C3VLve5.png)
 
 
