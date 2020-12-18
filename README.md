@@ -374,12 +374,16 @@ A secure login function would be implemented with users.
 | Carlos Aguila	|Full Stack Developer & DevOps Engineer|
 | Scott Nicolson| Lead UX Designer & Frontend Developer
 | Jonathan Hunt | Lead Frontend Engineer & Developer
-|Albert Atkinson | Lead Backend Engineer |
-|Rohithan Carthigeya | Lead DevOps Engineer
+| Albert Atkinson | Lead Backend Engineer |
+| Rohithan Carthigeya | Lead DevOps Engineer
 ## Acknowledgements
 
-Benson Luke, Trainer
-Harrison Jordan, Trainer
-Vaithilingam Savannah, Trainer
-Kolluru Raji, Trainer
+Luke Benson, Trainer
+
+Jordan Harrison, Trainer
+
+Savannah Vaithilingam, Trainer
+
+Raji Kolluru, Trainer
+
 Alan Davies, Trainer
