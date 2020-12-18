@@ -14,7 +14,7 @@ The ticket comprises of the following attributes:
 
   
 |  |  |  |
-|--|--|--|--|--|--|
+|--|--|--|
 |Title    |	Author| Description
 |Time Created | Urgency | Solution 
 |Status | Email | Topic
