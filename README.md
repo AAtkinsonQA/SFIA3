@@ -6,7 +6,7 @@
 
   
 
-The aim of the project is to create a Help Queue web application consisting of three applications, a front-end, back-end and a gateway service. The purpose of the Help Queue is so that trainees can post issues and queries about things they are not sure about so that trainers can solve them. The tickets are placed in a chronological list, with the oldest ticket at the top. The trainer would deal with the issue, mark the ticket as Done and added to a completed list.
+The aim of the project is to create a Help Queue web application consisting of three applications, a front-end, back-end and a gateway service. The purpose of the Help Queue is so that trainees can post issues and queries about things they are not sure about so that trainers can solve them. The tickets are placed in a chronological list, with the oldest ticket at the top. The trainer would deal with the issue, mark the ticket as 'Done' and added to a completed list.
 
   
 
